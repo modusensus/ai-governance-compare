@@ -1,0 +1,39 @@
+# Link checking for this repository.
+#
+#   lychee --config .lychee.toml --no-progress './**/*.md'
+#
+# Many sites answer an automated request with 403 or 429 while serving the page
+# to a browser. Those count as reachable here: the point of the check is to
+# catch dead links, not to police rate limiting.
+#
+# 5xx counts as reachable too, for a different reason: it is the server saying it
+# cannot answer right now, not the address saying the document does not exist.
+# EUR-Lex in particular returns 502 and 503 to datacenter traffic at random. A
+# link that is genuinely wrong still fails: it answers 404 or 410, or its host
+# does not resolve.
+accept = ["200..=299", "403", "429", "500..=599"]
+
+# EUR-Lex answers datacenter traffic erratically: from a GitHub runner the same
+# URL alternates between a real 200, an empty 202, a 503 and a connect timeout,
+# independently of the User-Agent. Requests are therefore kept slow and the
+# retry budget generous, so that a transient refusal recovers instead of
+# failing the build. See the probe described in CONTRIBUTING.md.
+#
+# With 200, 202 and 5xx all accepted above, a connect timeout is the only answer
+# left that can still fail a run; the workflow therefore runs the whole check a
+# second time before it reports failure.
+max_concurrency = 4
+max_retries = 4
+retry_wait_time = 15
+timeout = 45
+
+# Hosts that are routinely unreachable or refused from GitHub-hosted runners,
+# because they only serve clients inside mainland China. CI therefore cannot
+# check them; run the command above from a network that can reach them instead.
+# Delete this block to check them.
+exclude = [
+  '^https?://([a-z0-9-]+\.)*gov\.cn/',
+  '^https?://www\.npc\.gov\.cn/',
+  '^https?://www\.news\.cn/',
+  '^https?://openstd\.samr\.gov\.cn/',
+]

@@ -1,0 +1,59 @@
+---
+title: Measures for Labelling AI-Generated Synthetic Content
+jurisdiction: CN
+authority: Cyberspace Administration of China and three other departments
+published: 2025-03-14
+effective: 2025-09-01
+status: in-force
+source: https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm
+evidence: A
+verified: 2026-10-06
+---
+
+# Measures for Labelling AI-Generated Synthetic Content
+
+English · [中文](ai-generated-content-labeling-measures-zh.md)
+
+> Issued jointly by four departments; **effective 1 September 2025**. China's most direct rule requiring AI-generated content to be labelled.
+
+## In one line
+
+Text, images, audio, video and virtual scenes produced or synthesised by AI must carry labels: **explicit** labelling (visible to users) and **implicit** labelling (written into file metadata).
+
+## Who and what it governs
+
+- Object: AI-generated synthetic content — text, images, audio, video, virtual scenes.
+- Duty holders: service providers (the generating side and distribution platforms).
+
+## Key requirements
+
+- Add **explicit** labels so users can perceive that content is AI-generated.
+- Add **implicit** labels in file metadata so platforms and regulators can identify and trace it.
+- Providers must not delete, tamper with or forge labels, and must not help others evade labelling.
+
+## Why it matters
+
+This is where China moved fastest on "AI content must be identifiable": the measures took effect in September 2025, while the EU's comparable transparency duty only starts to apply in August 2026.
+
+## Companion technical standard
+
+- **GB 45438-2025** *Cybersecurity technology — Labelling method for AI-generated synthetic content*: a **mandatory national standard**, published 2025-02-28, effective **2025-09-01** (the same day as the measures). It standardises labelling methods, use cases, formats, and the metadata form of implicit labels.
+  - Full text (official portal): https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=F32EA2A561F1886CD8D606513512D547
+- Supporting practice guides cover metadata text requirements and detection frameworks.
+
+## Relationship to other laws
+
+- Related: Interim Measures for the Administration of Generative AI Services (effective 2023-08-15), Provisions on the Administration of Deep Synthesis (effective 2023-01-10), Cybersecurity Law, Data Security Law.
+- Comparison: the EU AI Act's transparency obligations and the DSA's platform duties.
+
+## Official sources
+
+- Measures (CAC and three other departments, published 2025-03-14), full text: https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm
+- Announcement of the release: https://www.cac.gov.cn/2025-03/14/c_1743654685899683.htm
+- Q&A with the drafters: https://www.cac.gov.cn/2025-03/14/c_1743654685896173.htm
+- Expert explainer *Putting a digital label on AI-generated content*: https://www.cac.gov.cn/2025-09/05/c_1758792061408012.htm
+
+## Unverified / TODO
+
+- [ ] Transcribe the metadata fields and implicit-label text requirements from GB 45438-2025 (needs the full standard)
+- [ ] Confirm the specific penalty provisions and amounts (back to the Generative AI Interim Measures and Deep Synthesis Provisions)

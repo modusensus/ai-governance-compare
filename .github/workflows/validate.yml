@@ -1,0 +1,74 @@
+name: Validate
+
+# Two independent checks, both run on every push and pull request:
+#
+#   docs  — offline. Front matter is complete and its date/status/source values
+#           mean what CONTRIBUTING.md says they mean; links inside an
+#           "Official sources" section point at official hosts; internal links
+#           and anchors resolve. No network access, so it can never fail for a
+#           reason outside this repository.
+#   links — external. Every http(s) link in the Markdown still resolves. See
+#           .lychee.toml for the hosts CI cannot reach.
+#
+# The weekly run catches links that rot while nothing is being committed.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    name: Documentation checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Front matter, official sources and internal links
+        run: node scripts/check-docs.mjs
+
+  links:
+    name: External links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Run twice. Some hosts — EUR-Lex above all — refuse datacenter traffic at
+      # random, so a first pass that fails on a transient refusal must not block
+      # a merge. A link that is actually broken fails both passes.
+      #
+      # `output` is moved out of the checkout on purpose. The action's default,
+      # `lychee/out.md`, is itself a Markdown file matching the './**/*.md' glob
+      # below, so a first pass that failed would leave a report behind for the
+      # second pass to re-scan as if it were documentation.
+      - name: Check links
+        id: links-first
+        continue-on-error: true
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --config .lychee.toml --no-progress --verbose './**/*.md'
+          fail: true
+          output: ${{ runner.temp }}/lychee-report.md
+          jobSummary: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check links (second pass)
+        if: steps.links-first.outcome == 'failure'
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --config .lychee.toml --no-progress --verbose './**/*.md'
+          fail: true
+          output: ${{ runner.temp }}/lychee-report.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

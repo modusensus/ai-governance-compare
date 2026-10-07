@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this comparison, please cite it as below."
+title: "AI Governance Compare"
+abstract: "A source-traceable comparison of how the EU and China regulate AI and data: one question per comparison, every key claim graded against its official source and dated."
+type: dataset
+authors:
+  - alias: modusensus
+    website: "https://github.com/modusensus"
+repository-code: "https://github.com/modusensus/ai-governance-compare"
+license:
+  - CC-BY-SA-4.0
+  - MIT
+version: "0.9.0"
+date-released: "2026-10-07"
+keywords:
+  - ai-act
+  - ai-governance
+  - artificial-intelligence-law
+  - comparative-law
+  - china
+  - european-union
