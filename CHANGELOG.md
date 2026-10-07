@@ -24,6 +24,8 @@ All notable changes to this project are documented here. The format follows [Kee
 - `skills/ai-governance-compare/README.md` — a CDN-mirror install command beside the canonical one, a pointer to the paste-line form, and a note that Codex has been changing where it looks for skills.
 - `docs/cn/ai-generated-content-labeling-measures.md` and its Chinese version, plus the two overview files — the `source` field and the source list for the labelling measures now point at the **full text** (《关于印发〈人工智能生成合成内容标识办法〉的通知》). They pointed at the press release announcing the measures, which carries no article text at all (checked: no 第一条 on the page), so `source` — the field the skill tells an agent to cite — sent readers somewhere the provisions could not be read. The announcement stays listed as a secondary link.
 
+- **Licensing** — `skills/` (the agent skill) is now **MIT**, alongside `scripts/`; the comparison documents (`docs/`, `assets/` and all prose) stay **CC BY-SA 4.0**. A tool should carry the licence of the code, and the licence badge, this file, `README.md`, `CONTRIBUTING.md` and the skill's own README now say the same thing.
+
 ## [0.9.0] - 2026-10-07
 
 ### Added

@@ -61,4 +61,4 @@ Step 1 of the skill reads a local copy before it reaches for the network, so any
 
 ## Licence
 
-Part of the prose of this repository: [CC BY-SA 4.0](../../LICENSE-docs).
+[MIT](../../LICENSE) — the skill is a tool, and the scripts are licensed the same way. The comparison documents under `docs/` are [CC BY-SA 4.0](../../LICENSE-docs).

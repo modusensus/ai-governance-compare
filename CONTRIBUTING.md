@@ -112,4 +112,4 @@ git commit -s -m "docs(cn): add card for the labelling measures"
 
 ## License
 
-By contributing you agree that prose is licensed under CC BY-SA 4.0 and code under MIT. See the [README](README.md#license).
+By contributing you agree that prose is licensed under CC BY-SA 4.0 and code — the skill and the scripts included — under MIT. See the [README](README.md#license).

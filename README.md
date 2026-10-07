@@ -9,7 +9,7 @@
   <img alt="Sourcing: nothing without a source" src="https://img.shields.io/badge/sourcing-nothing_without_a_source-F3F0E7?style=flat-square&labelColor=26413A">
   <img alt="Languages: English and Chinese" src="https://img.shields.io/badge/languages-English_%C2%B7_%E4%B8%AD%E6%96%87-F3F0E7?style=flat-square&labelColor=26413A">
   <a href="CITATION.cff"><img alt="Citation: CITATION.cff" src="https://img.shields.io/badge/citation-CITATION.cff-F3F0E7?style=flat-square&labelColor=26413A"></a>
-  <img alt="Licence: documents CC BY-SA 4.0, code MIT" src="https://img.shields.io/badge/licence-docs_CC_BY--SA_4.0_%C2%B7_code_MIT-F3F0E7?style=flat-square&labelColor=822B38">
+  <img alt="Licence: documents CC BY-SA 4.0, skill and code MIT" src="https://img.shields.io/badge/licence-docs_CC_BY--SA_4.0_%C2%B7_skill_%2B_code_MIT-F3F0E7?style=flat-square&labelColor=822B38">
   <img alt="Links: re-checked weekly" src="https://img.shields.io/badge/links-re--checked_weekly-F3F0E7?style=flat-square&labelColor=26413A">
   <img alt="Dependencies: none" src="https://img.shields.io/badge/dependencies-none-F3F0E7?style=flat-square&labelColor=26413A">
 </p>
@@ -129,8 +129,8 @@ By participating you agree to the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ## License
 
-- **Documents** (`docs/`, `skills/`, `assets/` and all prose): [CC BY-SA 4.0](LICENSE-docs)
-- **Code and scripts**: [MIT](LICENSE)
+- **Documents** (`docs/`, `assets/` and all prose): [CC BY-SA 4.0](LICENSE-docs)
+- **Code and the skill** (`scripts/`, `skills/`): [MIT](LICENSE)
 
 ## Disclaimer
 
