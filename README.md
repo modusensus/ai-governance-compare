@@ -79,6 +79,10 @@ skills/
 └── ai-governance-compare/   # the same content, loaded as an agent skill
 assets/
 └── logo.png                 # the mark above
+scripts/
+├── check-docs.mjs           # the offline checks CI runs
+├── build-site.mjs           # renders docs/ into _site/, which Pages serves
+└── site/                    # the stylesheet and the one vendored dependency
 ```
 
 ## Language
@@ -120,6 +124,14 @@ Then, for example:
 That line is the whole install. What it fetches is a short instruction sheet, not the content: it tells the agent where to look, how to pull a claim out with its source and grade, and what to do when the repository does not cover the question — say so rather than improvise. Nothing in it needs updating when a comparison is added.
 
 **Want it to load by itself?** Copy the same file into your agent's skills directory — the paths are in [`skills/ai-governance-compare/README.md`](skills/ai-governance-compare/README.md).
+
+## Reading it in a browser
+
+The same Markdown is published as a static site by the `Site` workflow. Nothing on the site is written by hand — every index row, evidence grade, check date and source link is read from the card it came from, so the site cannot disagree with the repository.
+
+Addresses mirror file paths: `docs/eu/ai-act.md` is `/eu/ai-act/`, and `docs/eu/ai-act-zh.md` is `/eu/ai-act-zh/`. Build it locally with `node scripts/build-site.mjs`, which writes `_site/` and reads nothing but `docs/` and `assets/`. There is no install step: the one thing the build uses, [marked](https://github.com/markedjs/marked), is vendored at `scripts/site/vendor/` under its own MIT licence.
+
+The site follows the system's light or dark setting and offers a toggle that remembers the choice. On a wide screen the left column is the site map — every page under its section, the current one marked — with this page's own sections beneath; on a phone it steps aside, and the comparison tables stack EU over China row by row instead of scrolling sideways.
 
 ## Contributing
 

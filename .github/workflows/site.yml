@@ -1,0 +1,55 @@
+name: Site
+
+# Publish docs/ as a static site on GitHub Pages.
+#
+#   build  — node scripts/build-site.mjs writes _site/ from the Markdown. No
+#            install step: the one thing the build pulls in, marked, is vendored
+#            under scripts/site/vendor/ with its MIT licence.
+#   deploy — GitHub's own Pages actions. The artifact is the whole _site/, so
+#            what runs in CI is exactly what the build job checked locally.
+#
+# The Validate workflow is what keeps main honest; this one only publishes what
+# already passed there, so it carries no documentation checks of its own.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Render _site/ from docs/
+        run: node scripts/build-site.mjs
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
