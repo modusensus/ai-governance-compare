@@ -1,0 +1,849 @@
+/*
+  AI Governance Compare — site stylesheet. Swiss grid direction.
+
+  One typeface (a grotesque, with a CJK sans behind it for the Chinese pages),
+  one accent (red), black rules instead of decoration, and typographic scale
+  doing the work that boxes and shadows would otherwise do. The user chose this
+  direction over a serif "legal gazette" look after seeing both rendered on the
+  same page.
+
+  The three evidence grades are three filled blocks — A green, B amber, C red —
+  so a Grade column reads by colour before it reads by letter. Red doubles as
+  the site accent, but among the grades it belongs to C alone.
+
+  No webfonts. A reference work that cites EUR-Lex should not depend on a third
+  party's font CDN, and a CJK face is megabytes.
+
+  The palette is tokenised because three palettes share one sheet: light, dark
+  (system preference or the masthead toggle), and print (always light, because
+  browsers drop background fills and light text would vanish on paper).
+*/
+
+:root {
+  --paper: #ffffff;
+  --paper-deep: #f2f2f2;
+  --ink: #000000;
+  --pine: #000000;          /* headings, strong text */
+  --accent: #e30613;        /* the one colour: emphasis, hover, grade C */
+  --muted: #595959;
+  --rule: #000000;          /* structural rules */
+  --rule-fine: #dcdcdc;
+  --surface: #f2f2f2;
+  --head-bg: #000000;       /* inverted table-header block */
+  --head-fg: #ffffff;
+  --grade-a-bg: #15803d;    /* the grades are three blocks: green, amber, red */
+  --grade-a-fg: #ffffff;
+  --grade-b-bg: #e8a200;
+  --grade-b-fg: #000000;    /* white on amber fails contrast; black is the road-sign answer */
+  --grade-c-bg: #e30613;
+  --grade-c-fg: #ffffff;
+  --zebra: #fafafa;
+  --plate-edge: #000000;
+
+  /* One page width, shared by the masthead, the text and the footer, so the
+     rule under the header lands on the edge of the column it introduces. */
+  --shell: 48rem;
+  --shell-rail: 67.5rem; /* 16rem sidebar + 3.5rem gap + 48rem text */
+  --shell-home: 72rem;
+
+  --sans: "Helvetica Neue", Helvetica, Arial, "Noto Sans SC", "PingFang SC",
+    "Microsoft YaHei", system-ui, sans-serif;
+  --serif: var(--sans); /* kept as an alias: nothing should reach for a serif */
+
+  --measure: 46rem;
+}
+
+/*
+  Dark. The same grid inverted: near-black paper, white rules lifted to grey so
+  they structure without glaring, and the accent pushed to a brighter red to
+  hold contrast. The inverted blocks stay inverted — a table header and a grade
+  block flip to light-on-dark's white, which is more Swiss than shading them.
+*/
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f0f0f;
+    --paper-deep: #1b1b1b;
+    --ink: #f2f2f2;
+    --pine: #f2f2f2;
+    --accent: #ff4438;
+    --muted: #a3a3a3;
+    --rule: #d9d9d9;
+    --rule-fine: rgba(255, 255, 255, 0.16);
+    --surface: #1b1b1b;
+    --head-bg: #f2f2f2;
+    --head-fg: #0f0f0f;
+    --grade-a-bg: #3fb950;
+    --grade-a-fg: #0f0f0f;
+    --grade-b-bg: #f0b429;
+    --grade-b-fg: #0f0f0f;
+    --grade-c-bg: #ff4438;
+    --grade-c-fg: #0f0f0f;  /* white on #FF4438 is 2.9:1; black on it is 7:1 */
+    --zebra: #161616;
+    --plate-edge: rgba(255, 255, 255, 0.35);
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #0f0f0f;
+  --paper-deep: #1b1b1b;
+  --ink: #f2f2f2;
+  --pine: #f2f2f2;
+  --accent: #ff4438;
+  --muted: #a3a3a3;
+  --rule: #d9d9d9;
+  --rule-fine: rgba(255, 255, 255, 0.16);
+  --surface: #1b1b1b;
+  --head-bg: #f2f2f2;
+  --head-fg: #0f0f0f;
+  --grade-a-bg: #3fb950;
+  --grade-a-fg: #0f0f0f;
+  --grade-b-bg: #f0b429;
+  --grade-b-fg: #0f0f0f;
+  --grade-c-bg: #ff4438;
+  --grade-c-fg: #0f0f0f;
+  --zebra: #161616;
+  --plate-edge: rgba(255, 255, 255, 0.35);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+/* ------------------------------------------------------------------ masthead */
+
+.masthead {
+  max-width: var(--page, var(--shell));
+  margin: 0 auto;
+  padding: 1.15rem 1.5rem 0.9rem;
+  border-bottom: 3px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1.5rem;
+}
+
+.wordmark {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--pine);
+  text-decoration: none;
+  border-bottom: 0;
+  white-space: nowrap;
+}
+
+.masthead nav {
+  margin-left: auto;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1.1rem;
+}
+
+.masthead nav a {
+  color: var(--pine);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.masthead nav a:hover {
+  color: var(--accent);
+  border-bottom: 0;
+}
+
+/* ---------------------------------------------------------------------- main */
+
+main {
+  max-width: var(--page, var(--shell));
+  margin: 0 auto;
+  padding: 2.4rem 1.5rem 1rem;
+}
+
+/* The landing page is an index: its tables need more width than prose does,
+   while the paragraphs on it keep the reading measure. */
+body.home p,
+body.home ul {
+  max-width: var(--measure);
+}
+
+.hero,
+.table-wrap {
+  max-width: none;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  line-height: 1.05;
+  font-weight: 800;
+  color: var(--pine);
+  letter-spacing: -0.03em;
+  margin: 0 0 1.2rem;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--pine);
+  margin: 2.8rem 0 0.9rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid var(--rule);
+}
+
+h2 .alt {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-left: 0.6rem;
+}
+
+h3 {
+  font-size: 1.06rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 2rem 0 0.5rem;
+}
+
+h4 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pine);
+  margin: 1.6rem 0 0.4rem;
+}
+
+p,
+ul,
+ol,
+dl {
+  margin: 0 0 1.05em;
+}
+
+ul,
+ol {
+  padding-left: 1.4rem;
+}
+
+li + li {
+  margin-top: 0.3rem;
+}
+
+a {
+  color: var(--pine);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+
+a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+code {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 0.86em;
+  background: var(--paper-deep);
+  padding: 0.08em 0.3em;
+}
+
+pre {
+  background: var(--paper-deep);
+  border-left: 3px solid var(--rule);
+  padding: 0.9rem 1.1rem;
+  overflow-x: auto;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+blockquote {
+  margin: 0 0 1.4rem;
+  padding: 0.15rem 0 0.15rem 1.2rem;
+  border-left: 6px solid var(--accent);
+  color: var(--ink);
+}
+
+blockquote p {
+  margin-bottom: 0.5em;
+}
+
+hr {
+  border: 0;
+  border-top: 2px solid var(--rule);
+  margin: 2.4rem 0;
+}
+
+/* --------------------------------------------------------------- page header */
+
+.meta-strip {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 1.5rem;
+  padding: 0.55rem 0;
+  border-top: 3px solid var(--rule);
+  border-bottom: 1px solid var(--rule-fine);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 0.6rem;
+}
+
+.meta-strip a {
+  border-bottom-color: var(--muted);
+}
+
+.meta-strip .sep {
+  color: var(--accent);
+}
+
+.m-jur {
+  font-weight: 800;
+}
+
+.m-grade {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.15em 0.55em;
+  white-space: nowrap;
+}
+
+.g-a {
+  background: var(--grade-a-bg);
+  color: var(--grade-a-fg);
+}
+
+.g-b {
+  background: var(--grade-b-bg);
+  color: var(--grade-b-fg);
+}
+
+.g-c {
+  background: var(--grade-c-bg);
+  color: var(--grade-c-fg);
+}
+
+.lang-switch {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: -0.7rem 0 1.5rem;
+}
+
+.card-meta {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  margin: 0 0 1.9rem;
+  padding: 0.85rem 1rem;
+  background: var(--surface);
+  border-left: 3px solid var(--rule);
+}
+
+.card-meta div {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0.8rem;
+}
+
+.card-meta div + div {
+  margin-top: 0.25rem;
+}
+
+.card-meta dt {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 0.15rem;
+}
+
+.card-meta dd {
+  margin: 0;
+  color: var(--ink);
+}
+
+/* --------------------------------------------------------------------- tables */
+
+.table-wrap {
+  margin: 1.6rem 0 2rem;
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.93rem;
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.6rem 0.85rem;
+  border-bottom: 1px solid var(--rule-fine);
+}
+
+thead th {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--head-fg);
+  background: var(--head-bg);
+  border: 0;
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+}
+
+tbody th {
+  color: var(--pine);
+  font-weight: 700;
+}
+
+td:first-child {
+  font-weight: 700;
+  color: var(--pine);
+}
+
+tbody tr:nth-child(odd) td {
+  background: var(--zebra);
+}
+
+tbody tr:last-child td {
+  border-bottom: 2px solid var(--rule);
+}
+
+.c-title {
+  font-weight: 400;
+  width: 42%;
+}
+
+.c-title a {
+  font-weight: 700;
+  border-bottom: 0;
+}
+
+.c-title a:hover {
+  border-bottom: 1px solid var(--accent);
+}
+
+.c-date {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.c-grade {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.index-compare .c-title {
+  width: auto;
+}
+
+td code {
+  font-size: 0.82em;
+}
+
+/* ---------------------------------------------------------------------- hero */
+
+.hero {
+  text-align: center;
+  padding-bottom: 1.4rem;
+  border-bottom: 3px solid var(--rule);
+  margin-bottom: 2.6rem;
+}
+
+/* The mark is a flattened cream rectangle; framed on both themes so it reads as
+   a mounted plate rather than an image that leaked. */
+.hero img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 1.4rem;
+  display: block;
+  border: 1px solid var(--plate-edge);
+}
+
+.hero .principle {
+  border-left: 0;
+  border-top: 3px solid var(--accent);
+  border-bottom: 3px solid var(--accent);
+  padding: 1rem 0;
+  margin: 0 auto 1.6rem;
+  max-width: 34rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.hero p {
+  max-width: 38rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.hero .principle p {
+  text-align: center;
+}
+
+section + section {
+  margin-top: 2.8rem;
+}
+
+.zh-list {
+  font-size: 0.95rem;
+  columns: 2;
+  column-gap: 2rem;
+}
+
+.zh-list li {
+  break-inside: avoid;
+}
+
+.fine {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* -------------------------------------------------------------------- footer */
+
+footer {
+  max-width: var(--page, var(--shell));
+  margin: 3rem auto 0;
+  padding: 1.2rem 1.5rem 2.6rem;
+  border-top: 3px solid var(--rule);
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+footer .foot-line {
+  margin: 0 0 0.5rem;
+  max-width: var(--measure);
+  color: var(--ink);
+}
+
+footer .foot-meta {
+  margin: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+footer .foot-meta a {
+  color: var(--ink);
+  border-bottom-color: var(--rule-fine);
+}
+
+/* ----------------------------------------------------------------- page grid */
+
+:root {
+  --page: var(--shell);
+}
+
+body.home {
+  --page: var(--shell-home);
+}
+
+.sidenav {
+  display: none;
+}
+
+/* On a wide screen the left column is the site map: every canonical page in
+   three groups with the current one marked, and the page's own sections under
+   it. It keeps the reading measure at 48rem without a sea of paper. */
+@media (min-width: 1180px) {
+  :root {
+    --page: var(--shell-rail);
+  }
+
+  body.home {
+    --page: var(--shell-home);
+  }
+
+  body:not(.home) main {
+    display: grid;
+    grid-template-columns: 16rem minmax(0, 48rem);
+    gap: 3.5rem;
+    align-items: start;
+  }
+
+  body:not(.home) article {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .sidenav {
+    display: block;
+    grid-column: 1;
+    grid-row: 1;
+    position: sticky;
+    top: 2.2rem;
+    align-self: start;
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+}
+
+.sn-cap {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 1.4rem 0 0.45rem;
+}
+
+.sidenav .sn-cap:first-child {
+  margin-top: 0.2rem;
+}
+
+.sidenav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidenav li {
+  margin: 0 0 0.32rem;
+}
+
+.sidenav a {
+  color: var(--pine);
+  border-bottom: 0;
+  opacity: 0.82;
+  display: block;
+}
+
+.sidenav a:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.sidenav a.on {
+  font-weight: 800;
+  opacity: 1;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.1em;
+}
+
+/* ----------------------------------------------------------------- the toggle */
+
+.theme-toggle {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--pine);
+  background: none;
+  border: 2px solid var(--rule);
+  padding: 0.16rem 0.55rem;
+  cursor: pointer;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.theme-toggle .t-when-dark {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .t-when-light {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .t-when-dark {
+  display: inline;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .t-when-light {
+    display: none;
+  }
+
+  :root:not([data-theme="light"]) .theme-toggle .t-when-dark {
+    display: inline;
+  }
+}
+
+/* ------------------------------------------------------------------- narrow */
+
+@media (max-width: 900px) {
+  .table-wrap {
+    overflow-x: visible;
+  }
+
+  table,
+  thead,
+  tbody,
+  tr,
+  th,
+  td {
+    display: block;
+    width: auto;
+  }
+
+  thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  tbody tr {
+    border-top: 2px solid var(--rule);
+    padding: 0.55rem 0 0.75rem;
+  }
+
+  tbody tr:last-child {
+    border-bottom: 2px solid var(--rule);
+  }
+
+  td,
+  th {
+    border-bottom: 1px solid var(--rule-fine);
+    padding: 0.4rem 0;
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: 0.9rem;
+  }
+
+  tbody tr:nth-child(odd) td {
+    background: none;
+  }
+
+  td .cc {
+    min-width: 0;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 0.25rem;
+  }
+
+  /* the first cell is the row's own label; it needs no column heading above it */
+  td:first-child {
+    display: block;
+    border-bottom: 0;
+    padding-bottom: 0.15rem;
+  }
+
+  td:first-child::before {
+    content: none;
+  }
+
+  .card-meta div {
+    grid-template-columns: 6.5rem 1fr;
+  }
+
+  .zh-list {
+    columns: 1;
+  }
+
+  .masthead nav {
+    margin-left: 0;
+  }
+}
+
+/* -------------------------------------------------------------------- print */
+
+@media print {
+  /* Paper is light whatever the screen shows: browsers drop background fills on
+     print, and light-on-white text would be unreadable. */
+  :root,
+  :root[data-theme="dark"] {
+    --paper: #fff;
+    --paper-deep: #f2f0e9;
+    --ink: #000;
+    --pine: #000;
+    --accent: #e30613;
+    --muted: #595959;
+    --rule: #000;
+    --rule-fine: #dcdcdc;
+    --surface: transparent;
+    --head-bg: transparent;
+    --head-fg: #000;
+    --grade-a-bg: transparent;
+    --grade-a-fg: #000;
+    --grade-b-bg: transparent;
+    --grade-b-fg: #000;
+    --grade-c-bg: transparent;
+    --grade-c-fg: #000;
+    --zebra: transparent;
+    --plate-edge: transparent;
+  }
+
+  .m-grade {
+    background: transparent;
+    border: 1px solid #000;
+  }
+
+  body {
+    font-size: 10.5pt;
+  }
+
+  .masthead nav,
+  .sidenav,
+  footer .foot-meta {
+    display: none;
+  }
+
+  a {
+    border-bottom: 0;
+    color: inherit;
+  }
+
+  .table-wrap {
+    overflow: visible;
+  }
+
+  h2 {
+    break-after: avoid;
+  }
+
+  tr,
+  blockquote {
+    break-inside: avoid;
+  }
+}

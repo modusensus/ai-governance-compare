@@ -12,3 +12,6 @@ desktop.ini
 *.tmp
 *~
 ~$*
+
+# 站点构建产物（node scripts/build-site.mjs 生成，由 Site workflow 部署）
+/_site/
