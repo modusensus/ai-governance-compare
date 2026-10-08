@@ -29,7 +29,7 @@
  * resolves on the site.
  */
 
-import { readFileSync, writeFileSync, mkdirSync, rmSync, copyFileSync, readdirSync, statSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, rmSync, copyFileSync, readdirSync, statSync } from "node:fs";
 import { join, resolve, relative, dirname, basename, sep } from "node:path";
 import { marked } from "./site/vendor/marked.esm.js";
 
@@ -37,7 +37,9 @@ const ROOT = resolve(".");
 const DOCS = join(ROOT, "docs");
 const OUT = join(ROOT, "_site");
 const REPO = "https://github.com/modusensus/ai-governance-compare";
-const SITE_URL = (process.env.SITE_URL || `${REPO.replace("github.com", "github.io")}/ai-governance-compare`).replace(/\/$/, "");
+/** Pages serves a project site at <owner>.github.io/<repo>; SITE_URL overrides it. */
+const PAGES_URL = `https://${REPO.replace("https://github.com/", "").replace("/", ".github.io/")}`;
+const SITE_URL = (process.env.SITE_URL || PAGES_URL).replace(/\/$/, "");
 
 const esc = (s) =>
   String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -529,10 +531,6 @@ copyFileSync(join(ROOT, "assets", "logo.png"), join(OUT, "assets", "logo.png"));
 copyFileSync(join(ROOT, "scripts", "site", "style.css"), join(OUT, "style.css"));
 writeFileSync(join(OUT, ".nojekyll"), "");
 
-// Pages takes the custom domain from a CNAME file in the published artifact, so
-// the domain lives in the repository (CNAME at the root) rather than only in
-// settings someone has to remember to keep in sync.
-if (existsSync(join(ROOT, "CNAME"))) copyFileSync(join(ROOT, "CNAME"), join(OUT, "CNAME"));
 writeFileSync(
   join(OUT, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>

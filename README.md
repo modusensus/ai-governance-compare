@@ -127,7 +127,7 @@ That line is the whole install. What it fetches is a short instruction sheet, no
 
 ## Reading it in a browser
 
-The same Markdown is published as a static site by the `Site` workflow. Nothing on the site is written by hand — every index row, evidence grade, check date and source link is read from the card it came from, so the site cannot disagree with the repository.
+The same Markdown is published as a static site by the `Site` workflow: **[modusensus.github.io/ai-governance-compare](https://modusensus.github.io/ai-governance-compare/)**. Nothing on the site is written by hand — every index row, evidence grade, check date and source link is read from the card it came from, so the site cannot disagree with the repository.
 
 Addresses mirror file paths: `docs/eu/ai-act.md` is `/eu/ai-act/`, and `docs/eu/ai-act-zh.md` is `/eu/ai-act-zh/`. Build it locally with `node scripts/build-site.mjs`, which writes `_site/` and reads nothing but `docs/` and `assets/`. There is no install step: the one thing the build uses, [marked](https://github.com/markedjs/marked), is vendored at `scripts/site/vendor/` under its own MIT licence.
 
