@@ -56,4 +56,4 @@ This is where China moved fastest on "AI content must be identifiable": the meas
 ## Unverified / TODO
 
 - [ ] Transcribe the metadata fields and implicit-label text requirements from GB 45438-2025 (needs the full standard)
-- [ ] Confirm the specific penalty provisions and amounts (back to the Generative AI Interim Measures and Deep Synthesis Provisions)
+- [x] Confirm the specific penalty provisions and amounts — resolved: neither the [Generative AI Interim Measures](generative-ai-services-measures.md) (Article 21) nor the [Deep Synthesis Provisions](deep-synthesis-provisions.md) (Article 22) sets a fine amount of its own; both refer punishment to the general laws, with suspension as the operational sanction

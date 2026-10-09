@@ -7,7 +7,7 @@ effective: —
 status: draft
 source: https://www.moj.gov.cn/pub/sfbgw/zwgkztzl/xxxcgcxjpfzsx/fzsxyw/202605/t20260511_534688.html
 evidence: B
-verified: 2026-10-06
+verified: 2026-10-10
 ---
 
 # AI liability and pending legislation in China
@@ -44,7 +44,7 @@ Liability today is **administrative-first**: regulators act through filing, asse
 
 ## Unverified / TODO
 
-- [ ] Confirm the Generative AI Interim Measures' penalty article and cross-references
+- [x] Confirm the Generative AI Interim Measures' penalty article and cross-references — Article 21: punishment follows the Cybersecurity Law, Data Security Law, Personal Information Protection Law and Science and Technology Progress Law; where those are silent, warning, circulated criticism and an order to correct within a time limit, and on refusal or serious cases an order to suspend the relevant service. **No fine amount of its own.** See [`generative-ai-services-measures.md`](generative-ai-services-measures.md)
 - [ ] Check whether the Supreme People's Court has issued AI-related judicial guidance ⚠
 - [ ] Track the comprehensive AI law from plan to draft and note the first public consultation
 - [ ] Confirm the Civil Code article numbers for product liability

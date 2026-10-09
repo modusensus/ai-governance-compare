@@ -2,7 +2,7 @@
 title: Liability and pending law compared — EU vs China
 type: compare
 evidence: graded per item, sources below
-verified: 2026-10-06
+verified: 2026-10-10
 ---
 
 # Liability and pending law compared — EU vs China
@@ -21,7 +21,7 @@ verified: 2026-10-06
 | Timing | in force 2024-12-08; national transposition by **2026-12-09** | already applicable | B |
 | Software and AI as "products" | yes — PLD covers software and AI systems | unsettled whether an AI-enabled service is a "product" ⚠ | B |
 | Burden of proof | disclosure duty + **rebuttable presumption** for complex products | ordinary civil burden; no AI-specific rule | A |
-| Administrative liability | AI Act, DSA, DMA, GDPR penalties | Generative AI Interim Measures, Algorithmic Recommendation Provisions, PIPL, DSL, CSL | A |
+| Administrative liability | AI Act, DSA, DMA, GDPR penalties | Generative AI Interim Measures, Deep Synthesis Provisions, Algorithmic Recommendation Provisions, PIPL, DSL, CSL — but neither AI measure **sets a fine amount of its own**: Art 21 of the generative measures enumerates the general laws and adds its own ladder ending in suspension, while Art 22 of the deep-synthesis provisions refers generally and aggravates where serious consequences result | A |
 | Ethics gate | risk management under the AI Act | Measures for Ethical Review of Science and Technology (trial), effective 2023-12-01 | A |
 | Pending AI law | none for liability; AI Act implementation continues | **comprehensive AI legislation directed by the State Council 2026 plan** (no draft yet) | B |
 
@@ -42,7 +42,7 @@ verified: 2026-10-06
 ## 4. Limits and unverified ⚠
 
 - The PLD publication date and transposition wording should be confirmed against the Official Journal. — **B** ⚠
-- The Generative AI Interim Measures' penalty article needs checking. — **C** ⚠
+- The penalty articles are carded, and they differ. **Article 21** of the [Generative AI Interim Measures](../cn/generative-ai-services-measures.md) enumerates the Cybersecurity Law, Data Security Law, Personal Information Protection Law and Science and Technology Progress Law, and where those are silent provides warning, circulated criticism and an order to correct — suspension of the relevant service on refusal or serious cases. **Article 22** of the [Deep Synthesis Provisions](../cn/deep-synthesis-provisions.md) refers generally to the relevant laws and administrative regulations, with heavier punishment where serious consequences result, and no fallback. Neither states an amount, so the heavy numbers belong to the general laws, not to the AI rules. — **A**
 - The Chinese AI law's scope and timing are speculative until a draft is published. — **C** ⚠
 - Whether Chinese courts treat AI-enabled services as "products" is not settled by statute. — **C** ⚠
 

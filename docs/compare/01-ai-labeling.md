@@ -26,7 +26,7 @@ English · [中文](01-ai-labeling-zh.md)
 | Trigger | ① interaction with AI ② synthetic content ③ deepfakes ④ emotion recognition / biometric categorisation | AI-generated **text, images, audio, video, virtual scenes** | A |
 | Beyond content: the interaction itself | Article 50 covers **direct interaction with an AI system** (e.g. chatbots) — users must be informed | Anthropomorphic Interaction Services Measures (Order No. 21, effective 2026-07-15), **Article 18**: the labelling duty applies here too, users must be told they are interacting with an AI service rather than a natural person, on signs of over-dependency the reminder must be prominent and dynamic (e.g. pop-up), and a usage-time reminder is owed **each time continuous use exceeds 2 hours** | A |
 | Enforcer | national market surveillance authorities | CAC, with other departments | A |
-| Penalty | up to EUR 15m or 3% of worldwide turnover (AI Act Article 99(4)) | handled under the Generative AI Interim Measures / Deep Synthesis Provisions (⚠ provisions to verify) | B |
+| Penalty | up to EUR 15m or 3% of worldwide turnover (AI Act Article 99(4)) | **no fine of its own.** Generative AI Interim Measures **Article 21** names the Cybersecurity Law, Data Security Law, PIPL and Science and Technology Progress Law, and only where those are silent gives warning, circulated criticism and an order to correct — then suspension of the service on refusal or serious cases. Deep Synthesis Provisions **Article 22** refers outright to the relevant laws and administrative regulations, adds heavier punishment where serious consequences result, and provides no fallback of its own | A |
 
 ## 2. Four observations you can use directly
 
@@ -58,7 +58,7 @@ English · [中文](01-ai-labeling-zh.md)
 ## 4. Limits and unverified ⚠
 
 - The EU penalty tier is confirmed as Article 99(4) (EUR 15m or 3%); the scope of the 2026-12-02 grace period rests on Regulation (EU) 2026/1744 rather than the original AI Act text. — **A**
-- Chinese penalty provisions and amounts need checking against the Generative AI Interim Measures and the Deep Synthesis Provisions. — **C** ⚠
+- Chinese penalty provisions are carded now, and the two instruments are not alike. **Article 21** of the [Generative AI Interim Measures](../cn/generative-ai-services-measures.md) enumerates the Cybersecurity Law, Data Security Law, PIPL and Science and Technology Progress Law and then supplies its own ladder — warning, circulated criticism, order to correct, suspension — for cases the named laws do not reach. **Article 22** of the [Deep Synthesis Provisions](../cn/deep-synthesis-provisions.md) merely refers to the relevant laws and administrative regulations and aggravates where serious consequences result; it has no fallback of its own. Neither states an amount, so the ceilings sit in the general laws — PIPL Article 66 (RMB 50m or 5% of prior-year turnover) and the amended Cybersecurity Law (RMB 10m). — **A**
 - GB 45438-2025 details (metadata fields, implicit-label text) require the full standard. — **C** ⚠
 - Anthropomorphic services have their own penalty bands now: **Article 30** of Order No. 21 reaches RMB 10,000–100,000 for refusal to correct or serious cases, and RMB 100,000–200,000 where harm to life or health results. Both sit far below the Article 99(4) tier of the AI Act, and below the amended Cybersecurity Law's RMB 10 million ceiling. — **A**
 
@@ -71,5 +71,7 @@ English · [中文](01-ai-labeling-zh.md)
 - China, Q&A on the labelling measures: https://www.cac.gov.cn/2025-03/14/c_1743654685896173.htm
 - China, GB 45438-2025 full text: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=F32EA2A561F1886CD8D606513512D547
 - China, expert explainer: https://www.cac.gov.cn/2025-09/05/c_1758792061408012.htm
+- China, Generative AI Interim Measures (Order No. 15), full text: https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm
+- China, Deep Synthesis Provisions (Order No. 12), full text: https://www.cac.gov.cn/2022-12/11/c_1672221949354811.htm
 - China, Anthropomorphic Interaction Services Measures (Order No. 21), full text: https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm
 - China, the same text in the State Council Gazette: https://www.gov.cn/gongbao/2026/issue_12806/202606/content_7072472.html
