@@ -12,6 +12,8 @@ verified: 2026-10-10
 
 # Interim Measures for the Administration of Generative Artificial Intelligence Services
 
+English · [中文](generative-ai-services-measures-zh.md)
+
 > 生成式人工智能服务管理暂行办法 — CAC with six other departments, **Order No. 15**: adopted at the CAC's 12th executive meeting of 2023 on 23 May 2023, signed and promulgated **10 July 2023**, in force **15 August 2023**. Five chapters, twenty-four articles. China's first national-level rule addressed to generative AI services, and still the general statute that the later, narrower rules hang from.
 
 ## In one line
