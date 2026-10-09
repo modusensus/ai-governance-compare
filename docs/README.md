@@ -102,6 +102,7 @@ In a law card, `evidence` in the front matter grades the card as a whole — A m
 - [x] Cybersecurity Law (effective 2017-06-01; amended 2025-10-28, in force 2026-01-01, articles renumbered) → `docs/cn/cybersecurity-law.md`
 - [x] Regulations on Network Data Security Management (Order No. 790, effective 2025-01-01) → `docs/cn/network-data-security-regulations.md`
 - [x] Provisions on the Administration of Algorithmic Recommendations (effective 2022-03-01) → `docs/cn/algorithmic-recommendation-provisions.md`
+- [x] Interim Measures for the Administration of AI Anthropomorphic Interaction Services (Order No. 21, effective 2026-07-15) → `docs/cn/ai-anthropomorphic-interaction-measures.md`
 - [ ] Provisions on the Administration of Deep Synthesis (effective 2023-01-10)
 - [ ] Interim Measures for the Administration of Generative AI Services (effective 2023-08-15)
 - [x] Provisions on Promoting and Regulating Cross-Border Data Flows (effective 2024-03-22) → `docs/cn/cross-border-data-flow-provisions.md`
