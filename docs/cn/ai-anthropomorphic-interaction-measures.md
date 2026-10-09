@@ -12,11 +12,13 @@ verified: 2026-10-09
 
 # Interim Measures for the Administration of Artificial Intelligence Anthropomorphic Interaction Services
 
+English · [中文](ai-anthropomorphic-interaction-measures-zh.md)
+
 > 人工智能拟人化互动服务管理暂行办法 — CAC, NDRC, MIIT, MPS and SAMR **Order No. 21**, adopted at the CAC's third executive meeting of 2026 on 2 February 2026, signed and promulgated 10 April 2026, in force **15 July 2026**. China's first rule aimed at AI companions rather than at AI content: it regulates the *relationship*, not just the output. Four chapters, thirty-two articles.
 
 ## In one line
 
-If an AI service simulates a person's character, thinking and communication style in **sustained emotional interaction**, the provider must prevent emotional dependency, keep minors out of virtual intimacy, hand interaction data back to the user on request, remind users every two hours, and file a security assessment with the provincial cyberspace administration before certain launches.
+If an AI service simulates a person's character, thinking and communication style in **sustained emotional interaction**, the provider must prevent emotional dependency, keep minors out of virtual intimacy, hand interaction data back to the user on request,  remind the user at each two hours of continuous use, and file a security assessment with the provincial cyberspace administration before certain launches.
 
 ## Who and what it governs
 
