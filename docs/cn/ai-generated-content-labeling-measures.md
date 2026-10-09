@@ -2,19 +2,19 @@
 title: Measures for Labelling AI-Generated Synthetic Content
 jurisdiction: CN
 authority: Cyberspace Administration of China and three other departments
-published: 2025-03-14
+published: 2025-03-07
 effective: 2025-09-01
 status: in-force
 source: https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm
 evidence: A
-verified: 2026-10-06
+verified: 2026-10-10
 ---
 
 # Measures for Labelling AI-Generated Synthetic Content
 
 English · [中文](ai-generated-content-labeling-measures-zh.md)
 
-> Issued jointly by four departments; **effective 1 September 2025**. China's most direct rule requiring AI-generated content to be labelled.
+> Adopted and signed by CAC, MIIT, MPS and NRTA on **7 March 2025**, released online 14 March 2025 as the notice **国信办通字〔2025〕2号**; **effective 1 September 2025**. China's most direct rule requiring AI-generated content to be labelled.
 
 ## In one line
 
@@ -48,7 +48,7 @@ This is where China moved fastest on "AI content must be identifiable": the meas
 
 ## Official sources
 
-- Measures (CAC and three other departments, published 2025-03-14), full text: https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm
+- Notice issuing the measures — 《关于印发〈人工智能生成合成内容标识办法〉的通知》, **国信办通字〔2025〕2号**, dated 2025-03-07 and released 2025-03-14; the measures are its attachment and this page carries their full text: https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm
 - Announcement of the release: https://www.cac.gov.cn/2025-03/14/c_1743654685899683.htm
 - Q&A with the drafters: https://www.cac.gov.cn/2025-03/14/c_1743654685896173.htm
 - Expert explainer *Putting a digital label on AI-generated content*: https://www.cac.gov.cn/2025-09/05/c_1758792061408012.htm

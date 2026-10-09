@@ -150,7 +150,7 @@ verified: 2026-10-10
 - EU AI Act 实施时间线（第三方追踪页，方便查阅——**非官方来源**）：https://artificialintelligenceact.eu/implementation-timeline/
 - 新产品责任指令 PLD（EU）2024/2853 原文：https://eur-lex.europa.eu/eli/dir/2024/2853/oj
 - 欧洲议会立法进程页（AILD 撤回记录）：https://www.europarl.europa.eu/legislative-train/theme-a-europe-fit-for-the-digital-age/file-ai-liability-directive
-- 《人工智能生成合成内容标识办法》（网信办等四部门，2025-03-14 发布，全文）：https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm
+- 《关于印发〈人工智能生成合成内容标识办法〉的通知》（国信办通字〔2025〕2 号，落款 2025-03-07，2025-03-14 公布；《办法》为通知附件，含全文）：https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm
 - 《促进和规范数据跨境流动规定》（网信办，2024-03-22）：https://www.cac.gov.cn/2024-03/22/c_1712776611775634.htm
 - 网络安全法（修正后重新公布，网信办）：https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm
 - 数据安全法（中国人大网）：http://www.npc.gov.cn/npc/c2/c30834/202106/t20210610_311888.html

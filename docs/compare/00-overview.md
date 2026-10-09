@@ -132,7 +132,7 @@ Product-level mechanisms that put authorisation, revocation, identity and audit 
 - AI Act implementation timeline (third-party tracker, listed for convenience — not an official source): https://artificialintelligenceact.eu/implementation-timeline/
 - New Product Liability Directive (EU) 2024/2853: https://eur-lex.europa.eu/eli/dir/2024/2853/oj
 - European Parliament legislative train, AI Liability Directive (records the withdrawal): https://www.europarl.europa.eu/legislative-train/theme-a-europe-fit-for-the-digital-age/file-ai-liability-directive
-- Labelling Measures (CAC, 2025-03-14), full text: https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm
+- Notice issuing the Labelling Measures (CAC et al., 国信办通字〔2025〕2号, dated 2025-03-07, released 2025-03-14) — carries the full text: https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm
 - Cross-border data flows provisions (CAC, 2024-03-22): https://www.cac.gov.cn/2024-03/22/c_1712776611775634.htm
 - Cybersecurity Law, re-promulgated text (CAC): https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm
 - Data Security Law (NPC): http://www.npc.gov.cn/npc/c2/c30834/202106/t20210610_311888.html
