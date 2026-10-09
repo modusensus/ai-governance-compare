@@ -56,7 +56,7 @@ Article 21 sets **no independent fine amount**. It routes punishment into the ge
 
 - **Named as its legal basis (Article 7(5), Article 21)** — Cybersecurity Law, Data Security Law, Personal Information Protection Law, and the Science and Technology Progress Law.
 - **Article 12 imports the deep-synthesis labelling duty**, and Article 17 imports the **filing machinery** of the [Provisions on the Administration of Algorithmic Recommendations](algorithmic-recommendation-provisions.md). The 2025 [Measures for Labelling AI-Generated Synthetic Content](ai-generated-content-labeling-measures.md) later displaced the labelling detail; the [Anthropomorphic Interaction Services Measures](ai-anthropomorphic-interaction-measures.md) of 2026 add a companion-service layer on top.
-- **The Provisions on the Administration of Deep Synthesis (effective 2023-01-10)** remain in force alongside; no card yet in this repository ⚠.
+- **The [Provisions on the Administration of Deep Synthesis](deep-synthesis-provisions.md)** (Order No. 12, effective 2023-01-10) remain in force alongside and are where the labelling duty of Article 12 actually comes from.
 - **Against the EU**: the EU's comparable layer is the AI Act's **general-purpose AI model** regime, whose obligations start to apply **2025-08-02** — a model-side chapter (documentation, training-data summaries, copyright policy, systemic-risk duties) rather than a service-side licence. China regulates the **service offered to the public** and reaches the model through it; the AI Act regulates the model and reaches the service through its deployer rules. See [`../eu/ai-act.md`](../eu/ai-act.md).
 
 ## Why this matters for the comparison
