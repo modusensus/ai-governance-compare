@@ -10,8 +10,8 @@ repository-code: "https://github.com/modusensus/ai-governance-compare"
 license:
   - CC-BY-SA-4.0
   - MIT
-version: "0.9.0"
-date-released: "2026-10-07"
+version: "0.10.0"
+date-released: "2026-10-10"
 keywords:
   - ai-act
   - ai-governance
