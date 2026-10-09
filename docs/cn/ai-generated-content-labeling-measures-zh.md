@@ -1,7 +1,7 @@
 ---
 title: 人工智能生成合成内容标识办法
 jurisdiction: CN
-authority: 国家互联网信息办公室等四部门
+authority: 国家互联网信息办公室、工业和信息化部、公安部、国家广播电视总局
 published: 2025-03-07
 effective: 2025-09-01
 status: in-force

@@ -1,7 +1,7 @@
 ---
 title: Measures for Labelling AI-Generated Synthetic Content
 jurisdiction: CN
-authority: Cyberspace Administration of China and three other departments
+authority: Cyberspace Administration of China, Ministry of Industry and Information Technology, Ministry of Public Security and National Radio and Television Administration
 published: 2025-03-07
 effective: 2025-09-01
 status: in-force
