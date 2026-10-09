@@ -2,7 +2,7 @@
 title: Labelling regimes compared — EU AI Act Article 50 vs China's labelling measures
 type: compare
 evidence: graded per item, sources below
-verified: 2026-10-06
+verified: 2026-10-10
 ---
 
 # Labelling regimes compared — EU AI Act Article 50 vs China's labelling measures
@@ -24,10 +24,11 @@ English · [中文](01-ai-labeling-zh.md)
 | Duty holders | **providers** and **deployers** of AI systems | **generating service providers**, distribution platforms, app stores, users | A |
 | Labelling method | notice + **machine-readable marking** + deepfake disclosure | **explicit** labelling + **implicit** labelling (file metadata) | A |
 | Trigger | ① interaction with AI ② synthetic content ③ deepfakes ④ emotion recognition / biometric categorisation | AI-generated **text, images, audio, video, virtual scenes** | A |
+| Beyond content: the interaction itself | Article 50 covers **direct interaction with an AI system** (e.g. chatbots) — users must be informed | Anthropomorphic Interaction Services Measures (Order No. 21, effective 2026-07-15), **Article 18**: the labelling duty applies here too, users must be told they are interacting with an AI service rather than a natural person, on signs of over-dependency the reminder must be prominent and dynamic (e.g. pop-up), and a usage-time reminder is owed **each time continuous use exceeds 2 hours** | A |
 | Enforcer | national market surveillance authorities | CAC, with other departments | A |
 | Penalty | up to EUR 15m or 3% of worldwide turnover (AI Act Article 99(4)) | handled under the Generative AI Interim Measures / Deep Synthesis Provisions (⚠ provisions to verify) | B |
 
-## 2. Three observations you can use directly
+## 2. Four observations you can use directly
 
 ### 2.1 Both are two-tier — but the second tier differs
 - **China: measures set the duty, a mandatory standard sets the format.** GB 45438-2025 fixes labelling methods, use cases, formats and metadata. It is **measurable and testable**. — **A**
@@ -43,6 +44,11 @@ English · [中文](01-ai-labeling-zh.md)
 - China aims at **content form** (text/image/audio/video/virtual scene) and the **distribution chain** (generator → distribution platform → app store → user). — **A**
 - The EU aims at **use situation** (chatbots, emotion recognition, biometric categorisation, deepfakes) — "you must know when you are talking to AI" counts as transparency. — **C**
 
+### 2.4 China labels the relationship, not only the output
+- Order No. 21 attaches the labelling duty to a **service** and then builds conduct duties around it: no virtual relatives or virtual partners for minors (Article 14), no service goal of replacing social interaction or inducing dependency (Article 10), an exit that must not be blocked by continued interaction (Article 19). — **A**
+- The EU's Article 50 disclosure tells you the counterpart is a machine and stops there; what the machine then does to you is regulated by the AI Act's risk tiers, not by the transparency clause. — **A**
+- So on AI companions the two regimes are not "stricter" and "looser": they take different objects. China regulates the provider's influence on the user; the EU regulates whether you are informed. — **C**
+
 ## 3. What it means for an ordinary person
 
 - In China: an unlabelled AI-generated video can plausibly be found non-compliant, with a mandatory standard behind it. — **B**
@@ -54,6 +60,7 @@ English · [中文](01-ai-labeling-zh.md)
 - The EU penalty tier is confirmed as Article 99(4) (EUR 15m or 3%); the scope of the 2026-12-02 grace period rests on Regulation (EU) 2026/1744 rather than the original AI Act text. — **A**
 - Chinese penalty provisions and amounts need checking against the Generative AI Interim Measures and the Deep Synthesis Provisions. — **C** ⚠
 - GB 45438-2025 details (metadata fields, implicit-label text) require the full standard. — **C** ⚠
+- Anthropomorphic services have their own penalty bands now: **Article 30** of Order No. 21 reaches RMB 10,000–100,000 for refusal to correct or serious cases, and RMB 100,000–200,000 where harm to life or health results. Both sit far below the Article 99(4) tier of the AI Act, and below the amended Cybersecurity Law's RMB 10 million ceiling. — **A**
 
 ## 5. Official sources
 
@@ -64,3 +71,5 @@ English · [中文](01-ai-labeling-zh.md)
 - China, Q&A on the labelling measures: https://www.cac.gov.cn/2025-03/14/c_1743654685896173.htm
 - China, GB 45438-2025 full text: https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=F32EA2A561F1886CD8D606513512D547
 - China, expert explainer: https://www.cac.gov.cn/2025-09/05/c_1758792061408012.htm
+- China, Anthropomorphic Interaction Services Measures (Order No. 21), full text: https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm
+- China, the same text in the State Council Gazette: https://www.gov.cn/gongbao/2026/issue_12806/202606/content_7072472.html
