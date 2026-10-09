@@ -12,6 +12,8 @@ verified: 2026-10-10
 
 # Provisions on the Administration of Deep Synthesis of Internet Information Services
 
+English · [中文](deep-synthesis-provisions-zh.md)
+
 > 互联网信息服务深度合成管理规定 — CAC, MIIT and MPS **Order No. 12**: adopted at the CAC's 21st executive meeting of 2022 on 3 November 2022, signed and promulgated **25 November 2022**, in force **10 January 2023**. Five chapters, twenty-five articles. China's first binding rule on synthetic media, and still the origin of the labelling duty that the 2025 measures later gave technical detail to.
 
 ## In one line
