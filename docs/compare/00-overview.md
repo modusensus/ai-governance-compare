@@ -2,7 +2,7 @@
 title: EU vs China — AI and data law, an overview
 type: compare
 evidence: graded per item in the body
-verified: 2026-10-06
+verified: 2026-10-10
 ---
 
 # EU vs China — AI and data law, an overview
@@ -28,8 +28,8 @@ Think of it this way: the EU draws a city master plan and then builds to it; Chi
 | Core AI law | AI Act (2024/1689; in force 2024-08-01) | AI Law still in the legislative plan; governed meanwhile by the Generative AI Interim Measures and similar | A |
 | Data protection | GDPR (2016/679; applicable 2018-05-25) | Personal Information Protection Law (effective 2021-11-01) | A |
 | Cross-border data | adequacy decisions + SCCs + BCRs | security assessment / standard contract / certification (three routes; relaxed in 2024) | A |
-| Content and labelling | AI Act transparency duties + DSA platform duties | Deep Synthesis Provisions (2023-01-10) + Labelling Measures (2025-09-01) | A |
-| Platforms | DSA + DMA (gatekeepers) | Algorithmic Recommendation Provisions (2022-03-01) + platform responsibility | A |
+| Content and labelling | AI Act transparency duties + DSA platform duties | Deep Synthesis Provisions (2023-01-10) + Labelling Measures (2025-09-01) + Anthropomorphic Interaction Services Measures (2026-07-15) | A |
+| Platforms | DSA + DMA (gatekeepers) | Algorithmic Recommendation Provisions (2022-03-01) + platform responsibility; app stores verify assessment and filing before listing (2026) | A |
 | Enforcement | GDPR up to 4% of worldwide turnover; AI Act up to 7% / EUR 35m | rectification orders, warnings, takedowns, service suspension; lower statutory fines | A |
 | Extraterritorial reach | GDPR Article 3; fines have landed on non-EU firms | PIPL Article 3 also claims extraterritorial effect; enforcement is more case-by-case | B |
 | Orientation | fundamental rights first (privacy, non-discrimination) | development and security in tandem (holistic national security) | C |
@@ -50,7 +50,7 @@ Think of it this way: the EU draws a city master plan and then builds to it; Chi
 
 > Three layers stack: an AI Act for AI, a GDPR for data, DSA/DMA for platforms.
 
-## 3. China's eight main tracks
+## 3. China's nine main tracks
 
 1. **Cybersecurity Law (effective 2017-06-01; amended 2025-10-28, in force 2026-01-01)** — network operations, critical information infrastructure. The amendment adds an AI article (new Article 20) and sharply raises penalties, up to RMB 10 million. — **A**
 2. **Data Security Law (effective 2021-09-01)** — data classification, important data, national security. — **A**
@@ -62,6 +62,7 @@ Think of it this way: the EU draws a city master plan and then builds to it; Chi
 8. **Provisions on Promoting and Regulating Cross-Border Data Flows (effective 2024-03-22)** — lowers thresholds, defines exemptions, works alongside the 2022 Security Assessment Measures. — **A**
    - Also **Measures for Ethical Review of Science and Technology (trial)** (effective 2023-12-01) ⚠ as an ethics backstop. — **C**
    - **AI Law**: repeatedly in the State Council legislative plan; not yet enacted ⚠. — **B**
+9. **Anthropomorphic Interaction Services Measures (Order No. 21, effective 2026-07-15)** — the first rule aimed at AI companions rather than AI content: no induced emotional dependency or manipulation, no virtual relatives or virtual partners for minors, a usage reminder every two hours of continuous use, interaction data the user can copy or delete, and a bar on training on users' sensitive interaction data without separate consent. — **A**
 
 > Three pillars — Cybersecurity Law, Data Security Law, PIPL — with the AI layer filled in by departmental rules.
 
@@ -136,3 +137,4 @@ Product-level mechanisms that put authorisation, revocation, identity and audit 
 - Cybersecurity Law, re-promulgated text (CAC): https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm
 - Data Security Law (NPC): http://www.npc.gov.cn/npc/c2/c30834/202106/t20210610_311888.html
 - Personal Information Protection Law (NPC): http://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html
+- Anthropomorphic Interaction Services Measures (CAC et al., Order No. 21), full text: https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm
