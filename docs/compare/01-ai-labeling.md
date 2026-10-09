@@ -18,7 +18,7 @@ English · [中文](01-ai-labeling-zh.md)
 
 | Dimension | EU | China | Grade |
 |---|---|---|---|
-| Source of law | AI Act (Regulation (EU) 2024/1689), Article 50 | Measures for Labelling AI-Generated Synthetic Content (CAC et al.) | A |
+| Source of law | AI Act (Regulation (EU) 2024/1689), Article 50 | Measures for Labelling AI-Generated Synthetic Content — adopted 2025-03-07 by four departments, issued as CAC notice 国信办通字〔2025〕2号 | A |
 | Technical detail | Commission interpretive guidelines (2026-07-20) + voluntary code of practice | **Mandatory national standard GB 45438-2025** (published 2025-02-28, effective 2025-09-01) | A |
 | Starts to apply | 2026-08-02 | 2025-09-01 (measures and standard together) | A |
 | Duty holders | **providers** and **deployers** of AI systems | **generating service providers**, distribution platforms, app stores, users | A |

@@ -36,6 +36,9 @@ All notable changes to this project are documented here. The format follows [Kee
 
 - **Licensing** — `skills/` (the agent skill) is now **MIT**, alongside `scripts/`; the comparison documents (`docs/`, `assets/` and all prose) stay **CC BY-SA 4.0**. A tool should carry the licence of the code, and the licence badge, this file, `README.md`, `CONTRIBUTING.md` and the skill's own README now say the same thing.
 
+### Fixed
+
+- **The labelling measures' `published` date was the web release, not the instrument's own date.** The notice issuing them — 《关于印发〈人工智能生成合成内容标识办法〉的通知》, 国信办通字〔2025〕2号 — is signed by CAC, MIIT, MPS and NRTA **2025-03-07** and was posted on cac.gov.cn on 2025-03-14; `CONTRIBUTING.md` defines `published` as the date the instrument carries, so `docs/cn/ai-generated-content-labeling-measures.md` and its Chinese version now read `published: 2025-03-07`, with the release date kept in the body. The four departments are named, and the 文号 is attributed to the notice rather than to the measures, in both cards, in `compare/01-ai-labeling` (both languages) and in the two overviews' source lists. Verified against the official text on 2026-10-10.
 ## [0.9.0] - 2026-10-07
 
 ### Added
