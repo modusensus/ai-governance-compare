@@ -105,6 +105,7 @@ In a law card, `evidence` in the front matter grades the card as a whole — A m
 - [x] Interim Measures for the Administration of AI Anthropomorphic Interaction Services (Order No. 21, effective 2026-07-15) → `docs/cn/ai-anthropomorphic-interaction-measures.md`
 - [x] Provisions on the Administration of Deep Synthesis of Internet Information Services (Order No. 12, effective 2023-01-10) → `docs/cn/deep-synthesis-provisions.md`
 - [x] Interim Measures for the Administration of Generative AI Services (Order No. 15, effective 2023-08-15) → `docs/cn/generative-ai-services-measures.md`
+- [x] Provisions on the Security Assessment of Internet Information Services with Public-Opinion Attributes or Social-Mobilisation Capacity (CAC and MPS, issued 2018-11-15, effective 2018-11-30) → `docs/cn/social-mobilisation-security-assessment-provisions.md`
 - [x] Provisions on Promoting and Regulating Cross-Border Data Flows (effective 2024-03-22) → `docs/cn/cross-border-data-flow-provisions.md`
 - [x] Measures for Ethical Review of Science and Technology (trial) (effective 2023-12-01) → `docs/cn/ai-law-and-liability.md`
 - [x] AI Law — comprehensive legislation directed by the State Council 2026 plan (no draft yet) → `docs/cn/ai-law-and-liability.md`
