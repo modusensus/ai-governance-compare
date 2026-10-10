@@ -7,6 +7,7 @@ effective: 2023-01-10
 status: in-force
 source: https://www.cac.gov.cn/2022-12/11/c_1672221949354811.htm https://www.gov.cn/zhengce/zhengceku/2022-12/12/content_5731431.htm
 evidence: A
+retrieved: 2026-10-11
 verified: 2026-10-11
 ---
 
@@ -79,9 +80,24 @@ verified: 2026-10-11
 - 三部门联合发布消息（中国政府网）：https://www.gov.cn/xinwen/2022-12/12/content_5731429.htm
 - 政策解读（中国政府网）：https://www.gov.cn/zhengce/2022-12/12/content_5731430.htm
 
+## 原文引证
+
+下面每一句都是从官方原文逐字抄下，并锚到本卡片依据的那份 `snapshots/` 快照。`node scripts/check-quotes.mjs` 离线复校——引文与原文对不上时会报错，而不是悄悄变成记录。上方的表述是本库的行文，这里才是锚点。
+
+- `（六）三维重建、数字仿真等生成或者编辑数字人物、虚拟场景的技术` —— 第二十三条第六类（本卡曾漏掉的那一类） （快照：`snapshots/cn/deep-synthesis-provisions.txt`）
+- `（四）人脸生成、人脸替换、人物属性编辑、人脸操控、姿态操控等生成或者编辑图像、视频内容中生物特征的技术` —— 第二十三条生物特征那一类 （快照：`snapshots/cn/deep-synthesis-provisions.txt`）
+- `采取技术或者人工方式对深度合成服务使用者的输入数据和合成结果进行审核` —— 第十条对输入数据与合成结果双向审核 （快照：`snapshots/cn/deep-synthesis-provisions.txt`）
+- `应当提示深度合成服务使用者依法告知被编辑的个人，并取得其单独同意` —— 第十四条单独同意 （快照：`snapshots/cn/deep-synthesis-provisions.txt`）
+- `任何组织和个人不得采用技术手段删除、篡改、隐匿本规定第十六条和第十七条规定的深度合成标识` —— 第十八条禁止删除篡改隐匿标识 （快照：`snapshots/cn/deep-synthesis-provisions.txt`）
+- `造成严重后果的，依法从重处罚` —— 第二十二条从重处罚（本卡论点：它不设罚款额度） （快照：`snapshots/cn/deep-synthesis-provisions.txt`）
+- `具有舆论属性或者社会动员能力的深度合成服务提供者` —— 第十九条备案触发条件 （快照：`snapshots/cn/deep-synthesis-provisions.txt`）
+- `明确提出制定完善对算法推荐、深度伪造等新技术应用的规范管理办法` —— 答记者问点名的政策出处 （快照：`snapshots/cn/deep-synthesis-provisions-qa.txt`）
+- `深度合成服务技术支持者应当参照服务提供者履行备案和变更、注销备案手续` —— 技术支持者参照履行备案 （快照：`snapshots/cn/deep-synthesis-provisions-qa.txt`）
+- `应当按照国家有关规定开展安全评估` —— 评估转致"按照国家有关规定"（未给标准） （快照：`snapshots/cn/deep-synthesis-provisions-qa.txt`）
+
 ## 待核实 / TODO
 
-- [ ] 英文卡片是本库自译（无官方英文本）；两处措辞不一致时一律以官方中文文本为准 ⚠
+- [ ] 英文卡片是本库自译（无官方英文本）；两处措辞不一致时一律以官方中文文本为准 ⚠ [gap:no_official_translation]
 - [x] 读上面那份政策解读，记录官方如何划定"舆论属性或者社会动员能力"——它决定谁备案、谁评估 —— 2026-10-11 已读：**答记者问没有划定**。两处提到都只重复触发条件，并把程序分别转致《互联网信息服务算法推荐管理规定》与"按照国家有关规定"；判定标准要在被转致的文件里找（见下一条）。
 - [x] 真正界定这个触发条件的文件已查明并收录——**《具有舆论属性或社会动员能力的互联网信息服务安全评估规定》**。本库此前把它记成 2022 年的《…安全评估办法》，**文种（规定，非办法）与年份（2018，非 2022）两处都错**，已在各卡一并改正；文本已对网信办官方全文逐串核验 → [卡片](social-mobilisation-security-assessment-provisions-zh.md)
 - [ ] 第二十四条项下广电、文旅、新闻出版的具体衔接规则需确认 2023 年以来是否有变化 ⚠

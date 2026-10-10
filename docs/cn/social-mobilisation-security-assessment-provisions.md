@@ -7,6 +7,7 @@ effective: 2018-11-30
 status: in-force
 source: https://www.cac.gov.cn/2018-11/15/c_1123716072.htm https://www.cac.gov.cn/2019-03/20/c_1124259405.htm
 evidence: A
+retrieved: 2026-10-11
 verified: 2026-10-11
 ---
 
@@ -65,9 +66,24 @@ Two consequences follow for the AI instruments that point here. **First**, the a
 - Full text, CAC (posted 2018-11-15, 来源：中国网信网): https://www.cac.gov.cn/2018-11/15/c_1123716072.htm
 - Joint issuance and full text republished, CAC (2019-03-20, 来源：网络传播杂志; carries the 政策性文件／不属于行政许可事项／不设立行政处罚措施 characterisation): https://www.cac.gov.cn/2019-03/20/c_1124259405.htm
 
+## Source quotes
+
+Every sentence below is copied from the official text and pinned to the snapshot in `snapshots/` that this card was written against. `node scripts/check-quotes.mjs` re-checks them offline, so a quote that stops matching the source fails a check instead of quietly becoming the record. The prose above is a rendering; these are the anchors.
+
+- `开办论坛、博客、微博客、聊天室、通讯群组、公众账号、短视频、网络直播、信息分享、小程序等信息服务或者附设相应功能` — Article 2(i) — the ten named service types (snapshot: `snapshots/cn/social-mobilisation-security-assessment-provisions.txt`)
+- `开办提供公众舆论表达渠道或者具有发动社会公众从事特定活动能力的其他互联网信息服务` — Article 2(ii) — the two-limb catch-all (snapshot: `snapshots/cn/social-mobilisation-security-assessment-provisions.txt`)
+- `地市级以上网信部门或者公安机关书面通知需要进行安全评估的其他情形` — Article 3(v) (snapshot: `snapshots/cn/social-mobilisation-security-assessment-provisions.txt`)
+- `应当自相关情形发生之日起30个工作日内提交安全评估报告` — Article 7 — 30 working days (snapshot: `snapshots/cn/social-mobilisation-security-assessment-provisions.txt`)
+- `责令互联网信息服务提供者限期重新评估` — Article 8 — order to re-assess (snapshot: `snapshots/cn/social-mobilisation-security-assessment-provisions.txt`)
+- `应当通过全国互联网安全管理服务平台向公众提示该互联网信息服务存在安全风险` — Article 13 — the consequence of refusal (snapshot: `snapshots/cn/social-mobilisation-security-assessment-provisions.txt`)
+- `本规定自2018年11月30日起施行` — Article 17 (snapshot: `snapshots/cn/social-mobilisation-security-assessment-provisions.txt`)
+- `国家互联网信息办公室和公安部11月15日发布` — joint issuance (snapshot: `snapshots/cn/social-mobilisation-security-assessment-provisions-announce.txt`)
+- `不属于行政许可事项` — not an administrative-permission matter (snapshot: `snapshots/cn/social-mobilisation-security-assessment-provisions-announce.txt`)
+- `不设立行政处罚措施` — sets no administrative penalty (snapshot: `snapshots/cn/social-mobilisation-security-assessment-provisions-announce.txt`)
+
 ## Unverified / TODO
 
-- [ ] The English title, and every article name and term in this card, is this repository's own translation — no official English text was found. ⚠
+- [ ] The English title, and every article name and term in this card, is this repository's own translation — no official English text was found. ⚠ [gap:no_official_translation]
 - [ ] Whether the 2018 provisions have been amended or superseded since — in particular by the *Network Data Security Management Regulations* (in force 2025-01-01) and by the algorithm-recommendation and deep-synthesis filing routes. Not checked against a consolidated source. ⚠
-- [ ] The **security assessment template** (安全评估模板) the authorities issued for use under this instrument, and the submission flow on the national internet security management service platform, are not carded; the template is the practical answer to what Article 5 and Article 6 require in the regulator's own format. ⚠
+- [ ] The **security assessment template** (安全评估模板) the authorities issued for use under this instrument, and the submission flow on the national internet security management service platform, are not carded; the template is the practical answer to what Article 5 and Article 6 require in the regulator's own format. ⚠ [gap:not_located]
 - [ ] Whether an AI product's algorithm filing under the Algorithmic Recommendation Provisions and its assessment under these provisions are handled as one procedure or two in practice. ⚠

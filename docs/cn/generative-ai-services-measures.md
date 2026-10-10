@@ -7,7 +7,8 @@ effective: 2023-08-15
 status: in-force
 source: https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm
 evidence: A
-verified: 2026-10-10
+retrieved: 2026-10-11
+verified: 2026-10-11
 ---
 
 # Interim Measures for the Administration of Generative Artificial Intelligence Services
@@ -71,10 +72,19 @@ This measure is why "China has no AI law" is misleading: it is not a statute, bu
 - Full text, State Council policy document library (七部门令第 15 号, 成文日期 2023-07-10): https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm
 - Joint announcement by the seven departments (CAC news item): https://www.cac.gov.cn/2023-07/13/c_1690898326795531.htm
 
+## Source quotes
+
+Every sentence below is copied from the official text and pinned to the snapshot in `snapshots/` that this card was written against. `node scripts/check-quotes.mjs` re-checks them offline, so a quote that stops matching the source fails a check instead of quietly becoming the record. The prose above is a rendering; these are the anchors.
+
+- `提供者违反本办法规定的，由有关主管部门依照《中华人民共和国网络安全法》、《中华人民共和国数据安全法》、《中华人民共和国个人信息保护法》、《中华人民共和国科学技术进步法》等法律、行政法规的规定予以处罚` — Article 21 names four statutes and stops (snapshot: `snapshots/cn/generative-ai-services-measures.txt`)
+- `法律、行政法规没有规定的，由有关主管部门依据职责予以警告、通报批评，责令限期改正；拒不改正或者情节严重的，责令暂停提供相关服务` — the fallback ladder — no fine amount anywhere (snapshot: `snapshots/cn/generative-ai-services-measures.txt`)
+- `第十七条提供具有舆论属性或者社会动员能力的生成式人工智能服务的，应当按照国家有关规定开展安全评估，并按照《互联网信息服务算法推荐管理规定》履行算法备案和变更、注销备案手续` — Article 17 — assessment and filing (snapshot: `snapshots/cn/generative-ai-services-measures.txt`)
+- `提供者应当按照《互联网信息服务深度合成管理规定》对图片、视频等生成内容进行标识` — Article 12 imports the labelling duty (snapshot: `snapshots/cn/generative-ai-services-measures.txt`)
+
 ## Unverified / TODO
 
-- [ ] The English rendering of every article name and term is this repository's own translation — no official English text was found. ⚠
+- [ ] The English rendering of every article name and term is this repository's own translation — no official English text was found. ⚠ [gap:no_official_translation]
 - [x] The security assessment required by Article 17 runs through the *Provisions on the Security Assessment of Internet Information Services with Public-Opinion Attributes or Social-Mobilisation Capacity* — **provisions, not measures, and 2018 rather than 2022**, which is what this card used to say. Identified, transcribed and carded; text checked against the CAC full text → [card](social-mobilisation-security-assessment-provisions.md).
-- [ ] Read the drafters' Q&A for this measure and record the official reading of "public-opinion attributes or social-mobilisation capacity" — it decides who files. ⚠
-- [ ] Check whether the practice guides and the mandatory generative-AI security standard issued since 2023 change what Article 7 and Article 17 require in practice — neither is carded here and no number has been verified for them. ⚠
+- [ ] Read the drafters' Q&A for this measure and record the official reading of "public-opinion attributes or social-mobilisation capacity" — it decides who files. ⚠ [gap:interpretation_missing]
+- [ ] Check whether the practice guides and the mandatory generative-AI security standard issued since 2023 change what Article 7 and Article 17 require in practice — neither is carded here and no number has been verified for them. ⚠ [gap:not_located]
 - [x] Close the ⚠ in `compare/01-ai-labeling.md` and `compare/05-liability-and-pending-law.md` about generative-AI penalties using Article 21 above — done in the same pass; both files now state that Art 21 enumerates four general laws and supplies its own ladder, while Art 22 of the deep-synthesis provisions refers generally with no fallback.

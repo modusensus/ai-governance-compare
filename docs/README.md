@@ -68,9 +68,12 @@ In a law card, `evidence` in the front matter grades the card as a whole — A m
 - [ ] Complete front matter; `source` is the official text, not a summary page
 - [ ] `published` is the date the instrument carries, `effective` is entry into force (use `applies` for the date it starts to bind)
 - [ ] Every key fact carries an evidence grade
-- [ ] `verified` is today's date
+- [ ] `verified` is today's date, and `retrieved` / `source_updated` say which moment they mean
+- [ ] The sentences the card claims are the law's are pinned in a `## Source quotes` / `## 原文引证` section against a snapshot in `snapshots/`
+- [ ] Anything missing is typed on its TODO as `[gap:no_instrument | not_located | not_transcribable | no_official_translation | interpretation_missing]`
 - [ ] Anything unverified is marked `⚠ unverified`
 - [ ] No invented numbers, article numbers or dates
+- [ ] `node scripts/check-docs.mjs` and `node scripts/check-quotes.mjs` both pass
 
 ## Language
 

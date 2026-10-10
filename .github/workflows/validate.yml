@@ -5,7 +5,9 @@ name: Validate
 #   docs  — offline. Front matter is complete and its date/status/source values
 #           mean what CONTRIBUTING.md says they mean; links inside an
 #           "Official sources" section point at official hosts; internal links
-#           and anchors resolve. No network access, so it can never fail for a
+#           and anchors resolve; every [gap:…] tag uses a declared type; and the
+#           sentences a card claims are quoted from the law are still in the
+#           snapshot it cites. No network access, so it can never fail for a
 #           reason outside this repository.
 #   links — external. Every http(s) link in the Markdown still resolves. See
 #           .lychee.toml for the hosts CI cannot reach.
@@ -36,6 +38,13 @@ jobs:
 
       - name: Front matter, official sources and internal links
         run: node scripts/check-docs.mjs
+
+      # "Is the sentence this card cites still in the official text?" — asked
+      # against the snapshot in snapshots/, so it needs no network and cannot be
+      # defeated by a Chinese host refusing datacenter traffic (28 of the 45 URLs
+      # in docs/ are such hosts, and .lychee.toml excludes them).
+      - name: Quote anchors against snapshots
+        run: node scripts/check-quotes.mjs
 
   links:
     name: External links

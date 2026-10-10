@@ -7,7 +7,8 @@ effective: 2017-06-01
 status: in-force
 source: https://www.cac.gov.cn/2025-12/29/c_1768735112911946.htm https://www.gov.cn/yaowen/liebiao/202510/content_7046194.htm
 evidence: A
-verified: 2026-10-10
+retrieved: 2026-10-11
+verified: 2026-10-11
 ---
 
 # Cybersecurity Law (CSL)
@@ -94,6 +95,19 @@ Chapter VI is where the 2025 amendment did most of its work: seventeen articles,
 
 - Followed by the **Data Security Law** (effective 2021-09-01) and the **Personal Information Protection Law** (effective 2021-11-01).
 - Operationalised by the **Regulations on Network Data Security Management** (effective 2025-01-01).
+
+## Source quotes
+
+Every sentence below is copied from the official text and pinned to the snapshot in `snapshots/` that this card was written against. `node scripts/check-quotes.mjs` re-checks them offline, so a quote that stops matching the source fails a check instead of quietly becoming the record. The prose above is a rendering; these are the anchors.
+
+- `第二十条国家支持人工智能基础理论研究和算法等关键技术研发，推进训练数据资源、算力等基础设施建设，完善人工智能伦理规范，加强风险监测评估和安全监管，促进人工智能应用和健康发展` — the AI article added by the 2025 amendment (snapshot: `snapshots/cn/cybersecurity-law.txt`)
+- `处二百万元以上一千万元以下罚款` — Arts. 61 and 69 top band — the RMB 10,000,000 ceiling (snapshot: `snapshots/cn/cybersecurity-law.txt`)
+- `造成关键信息基础设施丧失主要功能等特别严重危害网络安全后果的` — what Article 61 counts as especially serious (snapshot: `snapshots/cn/cybersecurity-law.txt`)
+- `关键信息基础设施的运营者在中华人民共和国境内运营中收集和产生的个人信息和重要数据应当在境内存储` — Article 39, the localisation duty (snapshot: `snapshots/cn/cybersecurity-law.txt`)
+- `一倍以上十倍以下罚款` — Article 67 — 1–10× the procurement amount (snapshot: `snapshots/cn/cybersecurity-law.txt`)
+- `五年内不得从事网络安全管理和网络运营关键岗位的工作` — Article 66, the five-year entry ban (snapshot: `snapshots/cn/cybersecurity-law.txt`)
+- `冻结财产` — Article 77 against overseas actors (snapshot: `snapshots/cn/cybersecurity-law.txt`)
+- `依照有关法律、行政法规的规定处理、处罚` — Article 71 refers the case out of this chapter (snapshot: `snapshots/cn/cybersecurity-law.txt`)
 
 ## Unverified / TODO
 

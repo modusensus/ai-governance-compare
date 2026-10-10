@@ -81,8 +81,11 @@ assets/
 └── logo.png                 # the mark above
 scripts/
 ├── check-docs.mjs           # the offline checks CI runs
+├── check-quotes.mjs         # are the quoted sentences still in the official text?
 ├── build-site.mjs           # renders docs/ into _site/, which Pages serves
 └── site/                    # the stylesheet and the one vendored dependency
+snapshots/
+└── cn/                      # the official texts the CN cards were written against, with source URL and hash
 ```
 
 ## Language

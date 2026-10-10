@@ -7,7 +7,8 @@ effective: 2026-07-15
 status: in-force
 source: https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm https://www.gov.cn/gongbao/2026/issue_12806/202606/content_7072472.html
 evidence: A
-verified: 2026-10-09
+retrieved: 2026-10-11
+verified: 2026-10-11
 ---
 
 # Interim Measures for the Administration of Artificial Intelligence Anthropomorphic Interaction Services
@@ -68,10 +69,20 @@ China now regulates the **emotional effect of a model on a named user** — depe
 - Full text as published in the State Council Gazette: https://www.gov.cn/gongbao/2026/issue_12806/202606/content_7072472.html
 - Joint announcement by the five departments (CAC news item, 2026-04-10): https://www.cac.gov.cn/2026-04/10/c_1777558395023172.htm
 
+## Source quotes
+
+Every sentence below is copied from the official text and pinned to the snapshot in `snapshots/` that this card was written against. `node scripts/check-quotes.mjs` re-checks them offline, so a quote that stops matching the source fails a check instead of quietly becoming the record. The prose above is a rendering; these are the anchors.
+
+- `（三）注册用户100万以上或者月活跃用户10万以上的` — the Article 22 thresholds (snapshot: `snapshots/cn/ai-anthropomorphic-interaction-measures.txt`)
+- `拒不改正或者情节严重的，责令停止提供相关服务，可以并处一万元以上十万元以下罚款；涉及危害公民生命健康安全且有危害后果的，并处十万元以上二十万元以下罚款` — Article 30 penalty bands (snapshot: `snapshots/cn/ai-anthropomorphic-interaction-measures.txt`)
+- `第十八条拟人化互动服务提供者应当履行人工智能生成合成内容标识义务，采取有效措施提示用户正在与人工智能服务而非自然人进行互动` — Article 18 labelling and the "not a human" prompt (snapshot: `snapshots/cn/ai-anthropomorphic-interaction-measures.txt`)
+- `第十四条拟人化互动服务提供者不得向未成年人提供虚拟亲属、虚拟伴侣等虚拟亲密关系的服务` — Article 14 minors ban (snapshot: `snapshots/cn/ai-anthropomorphic-interaction-measures.txt`)
+- `对用户连续使用拟人化互动服务每超过2个小时的，应当以对话或者弹窗等方式提醒用户注意使用时长` — the two-hour reminder (snapshot: `snapshots/cn/ai-anthropomorphic-interaction-measures.txt`)
+
 ## Unverified / TODO
 
-- [ ] The English rendering of every article name and term above is this repository's own translation — no official English text was found. ⚠
-- [ ] Read the regulators' Q&A / drafting notes for this measure and record the official reading of "sustained emotional interaction" — the boundary with an ordinary chatbot is a facts-and-degree question the text does not settle. ⚠
+- [ ] The English rendering of every article name and term above is this repository's own translation — no official English text was found. ⚠ [gap:no_official_translation]
+- [ ] Read the regulators' Q&A / drafting notes for this measure and record the official reading of "sustained emotional interaction" — the boundary with an ordinary chatbot is a facts-and-degree question the text does not settle. ⚠ [gap:interpretation_missing]
 - [ ] Confirm whether implementing guidance exists for the Article 22 assessment filing and the Article 26 annual verification (forms, channels, deadlines). ⚠
 - [ ] Track related instruments this measure cross-references: 未成年人网络保护条例 and the draft State Council regulation on minors' safe network use put out for comment 2026-09-18.
 - [x] Add the missing cards it points at — done: [Interim Measures for Generative AI Services](generative-ai-services-measures.md) and [Provisions on the Administration of Deep Synthesis](deep-synthesis-provisions.md) are both carded, each with a Chinese version.
