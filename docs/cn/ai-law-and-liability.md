@@ -46,7 +46,7 @@ Liability today is **administrative-first**: regulators act through filing, asse
 
 - [x] Confirm the Generative AI Interim Measures' penalty article and cross-references — Article 21: punishment follows the Cybersecurity Law, Data Security Law, Personal Information Protection Law and Science and Technology Progress Law; where those are silent, warning, circulated criticism and an order to correct within a time limit, and on refusal or serious cases an order to suspend the relevant service. **No fine amount of its own.** See [`generative-ai-services-measures.md`](generative-ai-services-measures.md)
 - [ ] Check whether the Supreme People's Court has issued AI-related judicial guidance ⚠
-- [ ] Track the comprehensive AI law from plan to draft and note the first public consultation
+- [ ] Track the comprehensive AI law from plan to draft and note the first public consultation [gap:no_instrument]
 - [ ] Confirm the Civil Code article numbers for product liability
 
 ## Official sources

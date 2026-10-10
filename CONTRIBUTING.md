@@ -25,13 +25,15 @@ Thanks for helping make this comparison trustworthy. The first rule of this repo
 title: Measures for Labelling AI-Generated Synthetic Content
 jurisdiction: CN            # CN / EU / other
 authority: Cyberspace Administration of China and three other departments
-published: 2025-03-14       # the date the instrument carries (adoption or signature), not the OJ date
+published: 2025-03-07       # the date the instrument carries (adoption or signature), not the OJ date
 effective: 2025-09-01       # date of entry into force
 applies: 2025-09-01         # optional: date it first binds those it governs, if that differs
 status: in-force            # in-force / draft / proposed / repealed / stub
 source: <link to the official text>
 evidence: A                 # the card's own grade — A / B / C, see docs/README.md
 verified: 2026-10-06        # date you last checked the source
+retrieved: 2026-10-06       # optional: date the snapshot in snapshots/ was pulled
+source_updated: 2026-01-01  # optional: date the text itself last changed (an amendment, a renumbering)
 ---
 ```
 
@@ -49,11 +51,41 @@ The three date fields mean exactly one thing each. Do not blur them:
 
 `status: stub` means the card exists but the official text has not been secured yet; leave `source` empty and state in the body what is missing.
 
+**Three timestamps, not one.** `verified` answers *when we last checked*; `retrieved` answers *when the snapshot was pulled*; `source_updated` answers *when the law itself changed*. They come apart constantly — the Cybersecurity Law changed on 2026-01-01 and this repository read it on 2026-10-10 — and a single field forces one of the two meanings to be dropped. Give `source_updated` whenever the text has an amendment, a re-promulgation or a renumbering after its `effective` date; the checker **fails** a card whose `source_updated` is later than its `verified`, because that is the exact shape of a card that has silently gone stale.
+
+### Quote anchors and typed gaps
+
+A card that renders a foreign-language law is a translation, and a translation drifts. This repository caught itself twice — writing 或者 as 或 in five places, and describing a six-item statutory list as five items — and neither error was visible on the page. The mechanism that catches them is a quote anchor:
+
+- `snapshots/<jurisdiction>/<slug>.txt` holds the official text as plain text, whitespace removed, with a header recording the `# source:` URL, `# retrieved:` date and `# sha256(body):` of what follows. Statute text published by a government is not our composition; keeping a copy is what makes the check offline.
+- The card ends with a section headed `## Source quotes` (English cards) or `## 原文引证` (Chinese cards). Each bullet is one span of the **official original**, in backticks, then where the card relies on it, then the snapshot in backticks:
+
+  ```markdown
+  - `处二百万元以上一千万元以下罚款` — Arts. 61 and 69 top band (snapshot: `snapshots/cn/cybersecurity-law.txt`)
+  ```
+
+- The prose above the section is ours; those bullets are the anchors. `node scripts/check-quotes.mjs` asks only one question — *is that sentence still in the text?* — and answers present / drifted / absent / unverifiable. A link returning `200` says nothing about any of it.
+- A snapshot whose body no longer matches its own header hash fails the check. An altered snapshot is not evidence.
+
+Absence is typed as well. A TODO that records something missing ends with `[gap:<type>]`, from a closed list:
+
+| Type | Means | Example in this repository |
+|---|---|---|
+| `no_instrument` | the law does not exist yet | China's comprehensive AI law is on the State Council's plan, with no draft |
+| `not_located` | it exists; we have not found the official text | the 2026 consultation draft on minors' online protection |
+| `not_transcribable` | published, but not in a form that can be re-checked | GB 45438-2025, served only as tiled page images |
+| `no_official_translation` | no official text in the other language | every CN card's English rendering |
+| `interpretation_missing` | no official Q&A or drafting note to cite | the anthropomorphic-services measures |
+
+The type is the answer to "what would it take to close this?", which a blank or a bare `⚠` does not give. A backlog that cannot distinguish those five is not plannable — 77 open TODOs become one number instead of five different jobs.
+
 ## Writing rules
 
 - **Cite the source for every key fact** — link or official document number.
 - **Grade the evidence.** **A** = the primary official text (statute, regulation, mandatory standard), checked live against the link in `source`. **B** = another official source (regulator guidance, an official press release, Commission pages), or a direct mechanical reading of the primary text. **C** = our own comparison or inference, or a claim not yet traced back to the primary text — news reports included; a C never supports a conclusion on its own, and an unchecked one keeps the `⚠`. The table is repeated in [`docs/README.md`](docs/README.md#evidence-grades).
-- **Date the check.** Laws change; readers need to know when you verified this.
+- **Date the check.** Laws change; readers need to know when you verified this. Say which of the three timestamps you mean (`verified`, `retrieved`, `source_updated`).
+- **Anchor the load-bearing quote.** Wherever a card states what a provision *says* — a fine band, a threshold, an enumerated list — put that sentence in the card's quote section, in the official language, pinned to its snapshot. The prose is ours; the anchor is the text's.
+- **Type the absence.** A TODO for something missing ends with `[gap:<type>]`, so the backlog says what kind of missing it is and what would close it.
 - Mark anything you could not verify with `⚠ unverified`. Never write it as settled fact.
 - Numbers (penalties, amounts, dates, article numbers) must come from the official text. Do not estimate, and do not invent.
 
@@ -70,6 +102,7 @@ CI runs on every push and pull request (`.github/workflows/validate.yml`), and w
 
 ```bash
 node scripts/check-docs.mjs                              # offline, no network needed
+node scripts/check-quotes.mjs                            # offline: are the quoted sentences still in the snapshots
 lychee --config .lychee.toml --no-progress './**/*.md'   # external links
 ```
 
@@ -78,15 +111,20 @@ lychee --config .lychee.toml --no-progress './**/*.md'   # external links
 - missing or incomplete front matter (`title`, `evidence`, `verified` are required);
 - a date field that is not `YYYY-MM-DD`, or `—` outside `status: draft / proposed / stub`;
 - a `verified` date in the future;
+- a `source_updated` later than `verified` — the instrument changed after the card was last attested;
 - an `evidence` letter other than A, B or C;
 - a `source` whose host is not an official publication;
 - a link under an "Official sources" heading that is not on an official host;
 - a relative link that does not resolve;
+- a `[gap:…]` tag whose type is not one of the five declared types, or that sits on a TODO already checked off;
+- a card carrying a quote section without a `retrieved` date;
 - a `skills/<name>/SKILL.md` whose front matter does not open the file, whose `name` or `description` is empty, or whose `name` does not match its directory.
+
+`scripts/check-quotes.mjs` fails on a quote that is **absent** from its snapshot or **unverifiable** (missing snapshot, no source URL, a non-official source host, or a snapshot whose body no longer matches its own recorded hash), and warns on **drift** (most of the sentence is still there but the tail moved) and on snapshots no card cites.
 
 Two things the checker deliberately lets through: links inside fenced code blocks and inline code spans (they are examples, not links), and a link on a line that says in words that it is *not* an official source (`not an official source`, `非官方来源`) — label it honestly and it may stay.
 
-CI runs from GitHub's runners, which cannot reliably reach sites that only serve mainland China. `.lychee.toml` excludes those hosts; run the link check from a network inside China to cover them.
+CI runs from GitHub's runners, which cannot reliably reach sites that only serve mainland China. `.lychee.toml` excludes those hosts; run the link check from a network inside China to cover them. That is why the quote check is offline: 28 of the 45 URLs in `docs/` are hosts CI never reaches, so "is the sentence still there" cannot depend on reaching them.
 
 The same is true, for a different reason, of EUR-Lex. It sits behind a filter that treats datacenter traffic erratically: from a runner the identical URL alternates between a real `200`, an empty `202`, a `502`, a `503` and a connect timeout, and the answer does not depend on the User-Agent. `.lychee.toml` therefore keeps the request rate low, counts every `5xx` as reachable, and keeps the retry budget generous; on top of that the `External links` job runs the whole check a second time before it reports failure. What survives two passes is a link that is really broken — a `404`, a `410`, or a host that does not resolve — so take a reported error at face value. The one exception: if the error is on `eur-lex.europa.eu` and the URL opens fine in your browser, it was a timeout, and re-running the job is the fix.
 

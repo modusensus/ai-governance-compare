@@ -10,9 +10,17 @@
  *      "官方来源"), every link points at an official host — unless the line says
  *      in words that it is not an official source.
  *   3. Internal links: every relative link and anchor resolves.
- *   4. Skills: every skills/<name>/SKILL.md opens with front matter carrying a
+ *   4. Gap tags: a TODO that records something missing says *which kind* of
+ *      missing it is, from a closed list, because the type decides what would
+ *      unblock it.
+ *   5. Timestamps: `retrieved` and `source_updated` mean what CONTRIBUTING.md
+ *      says they mean, and a card whose text changed after the last check says so.
+ *   6. Skills: every skills/<name>/SKILL.md opens with front matter carrying a
  *      non-empty `name` and `description` (the two fields an agent reads when it
  *      decides whether to load the skill at all).
+ *
+ * Quote anchors — "is the sentence this card cites still in the official text" —
+ * are a separate check: `node scripts/check-quotes.mjs`.
  *
  * Usage: node scripts/check-docs.mjs
  */
@@ -33,6 +41,28 @@ const DATE_KEYS = ["published", "effective", "applies"];
 const STATUSES = new Set(["in-force", "draft", "proposed", "repealed", "stub"]);
 /** Statuses for which `published: —` / `effective: —` and an empty `source` are allowed. */
 const NO_TEXT_STATUSES = new Set(["draft", "proposed", "stub"]);
+
+/**
+ * The three timestamps a card can carry. `verified` (required) is when *we* last
+ * checked; `retrieved` is when the snapshot was pulled; `source_updated` is when
+ * the text itself last changed. Collapsing them into one field hides staleness:
+ * a law amended in January and last read in October looks current.
+ */
+const RETRIEVED_KEYS = ["retrieved", "source_updated"];
+
+/**
+ * A gap has to say *what kind* of gap it is. "We could not find the draft" and
+ * "the regulator publishes the standard only as page images, so a transcription
+ * cannot be re-verified" are different problems with different unblockings, and
+ * a backlog that cannot tell them apart is not a backlog anyone can plan from.
+ */
+const GAP_TYPES = new Set([
+  "no_instrument", // the law does not exist yet
+  "not_located", // it exists; the official text has not been found
+  "not_transcribable", // text is published but not in a form that can be re-checked
+  "no_official_translation", // no official English (or other-language) text exists
+  "interpretation_missing", // no official Q&A / drafting explanation to cite
+]);
 
 /** Hosts that count as an official publication of a legal instrument. */
 const OFFICIAL_HOSTS = [
@@ -179,6 +209,31 @@ function checkFrontMatter(file, text) {
     fail(file_, `verified: ${verified} is in the future — you cannot have checked the source yet`);
   }
 
+  for (const key of RETRIEVED_KEYS) {
+    const value = fields.get(key);
+    if (value === undefined) continue;
+    if (!isRealDate(value)) {
+      fail(file_, `${key}: ${value} is not a YYYY-MM-DD date`);
+      continue;
+    }
+    if (value > tomorrow) fail(file_, `${key}: ${value} is in the future`);
+  }
+
+  const retrieved = fields.get("retrieved");
+  const sourceUpdated = fields.get("source_updated");
+  if (retrieved && verified && retrieved > verified) {
+    warn(file_, `retrieved: ${retrieved} is later than verified: ${verified} — the snapshot was pulled after the last attested check`);
+  }
+  if (sourceUpdated && verified && sourceUpdated > verified) {
+    fail(
+      file_,
+      `source_updated: ${sourceUpdated} is later than verified: ${verified} — the text changed after you last checked it, so re-verify before this card is cited`
+    );
+  }
+  if (/^##\s+.*(Source quotes|原文引证)/m.test(text) && !retrieved) {
+    fail(file_, "the card carries a quote section but no `retrieved` — say when the snapshot was pulled");
+  }
+
   const evidence = fields.get("evidence");
   if (evidence && /^[A-Za-z]$/.test(evidence) && !/^[ABC]$/.test(evidence)) {
     fail(file_, `evidence: ${evidence} — a single-letter grade must be A, B or C`);
@@ -284,6 +339,38 @@ function checkOfficialSources(file, text) {
   });
 }
 
+// ------------------------------------------------------------------- gap tags
+
+/**
+ * A backlog that cannot tell "we could not find it" from "it does not exist yet"
+ * from "it is published but not readable by machine" cannot be planned from. The
+ * tag is one word and it goes at the end of the TODO line:
+ *
+ *     - [ ] GB 45438-2025 的字段级键名未转录 [gap:not_transcribable]
+ *
+ * Only unchecked items may be tagged — a closed TODO has no gap left to type.
+ */
+function checkGapTags(file, text) {
+  const file_ = rel(file);
+  text.split(/\r?\n/).forEach((line, i) => {
+    for (const m of line.matchAll(/\[gap:([a-z_]+)\]/g)) {
+      const type = m[1];
+      if (!GAP_TYPES.has(type)) {
+        fail(
+          file_,
+          `line ${i + 1}: [gap:${type}] is not a gap type — use one of ${[...GAP_TYPES].join(" / ")}`
+        );
+      }
+      if (!/^\s*-\s+\[ \]/.test(line)) {
+        fail(
+          file_,
+          `line ${i + 1}: a [gap:…] tag belongs on an unchecked \`- [ ] \` TODO, not on ${line.trim().slice(0, 24)}…`
+        );
+      }
+    }
+  });
+}
+
 // ----------------------------------------------------------- internal links
 
 function slug(heading) {
@@ -331,6 +418,7 @@ for (const file of files) {
   const code = stripCode(text);
   if (CARD_PATH.test(relative(DOCS, file))) checkFrontMatter(file, text);
   checkOfficialSources(file, code);
+  checkGapTags(file, code);
   checkInternalLinks(file, code);
 }
 

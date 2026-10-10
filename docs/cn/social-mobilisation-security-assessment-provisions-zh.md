@@ -7,6 +7,7 @@ effective: 2018-11-30
 status: in-force
 source: https://www.cac.gov.cn/2018-11/15/c_1123716072.htm https://www.cac.gov.cn/2019-03/20/c_1124259405.htm
 evidence: A
+retrieved: 2026-10-11
 verified: 2026-10-11
 ---
 
@@ -67,8 +68,23 @@ verified: 2026-10-11
 - 全文，国家互联网信息办公室（2018-11-15 挂网，来源：中国网信网）：https://www.cac.gov.cn/2018-11/15/c_1123716072.htm
 - 两部门联合发布说明＋全文转载，国家互联网信息办公室（2019-03-20，来源：网络传播杂志；含**属于政策性文件**、**不属于行政许可事项**、**不设立行政处罚措施**三句原文定性）：https://www.cac.gov.cn/2019-03/20/c_1124259405.htm
 
+## 原文引证
+
+下面每一句都是从官方原文逐字抄下，并锚到本卡片依据的那份 `snapshots/` 快照。`node scripts/check-quotes.mjs` 离线复校——引文与原文对不上时会报错，而不是悄悄变成记录。上方的表述是本库的行文，这里才是锚点。
+
+- `开办论坛、博客、微博客、聊天室、通讯群组、公众账号、短视频、网络直播、信息分享、小程序等信息服务或者附设相应功能` —— 第二条第一项：十类服务 （快照：`snapshots/cn/social-mobilisation-security-assessment-provisions.txt`）
+- `开办提供公众舆论表达渠道或者具有发动社会公众从事特定活动能力的其他互联网信息服务` —— 第二条第二项：两项兜底 （快照：`snapshots/cn/social-mobilisation-security-assessment-provisions.txt`）
+- `地市级以上网信部门或者公安机关书面通知需要进行安全评估的其他情形` —— 第三条第五项 （快照：`snapshots/cn/social-mobilisation-security-assessment-provisions.txt`）
+- `应当自相关情形发生之日起30个工作日内提交安全评估报告` —— 第七条 30 个工作日 （快照：`snapshots/cn/social-mobilisation-security-assessment-provisions.txt`）
+- `责令互联网信息服务提供者限期重新评估` —— 第八条责令限期重新评估 （快照：`snapshots/cn/social-mobilisation-security-assessment-provisions.txt`）
+- `应当通过全国互联网安全管理服务平台向公众提示该互联网信息服务存在安全风险` —— 第十三条：拒不评估就向公众提示风险 （快照：`snapshots/cn/social-mobilisation-security-assessment-provisions.txt`）
+- `本规定自2018年11月30日起施行` —— 第十七条施行日 （快照：`snapshots/cn/social-mobilisation-security-assessment-provisions.txt`）
+- `国家互联网信息办公室和公安部11月15日发布` —— 两部门联合发布 （快照：`snapshots/cn/social-mobilisation-security-assessment-provisions-announce.txt`）
+- `不属于行政许可事项` —— 不属于行政许可事项 （快照：`snapshots/cn/social-mobilisation-security-assessment-provisions-announce.txt`）
+- `不设立行政处罚措施` —— 不设立行政处罚措施 （快照：`snapshots/cn/social-mobilisation-security-assessment-provisions-announce.txt`）
+
 ## 待核实 / TODO
 
 - [ ] 本规定自 2018 年以来是否被修改或替代——特别是《网络数据安全管理条例》（2025-01-01 施行）与算法备案、深度合成备案两条路径的衔接，未对合并文本核实 ⚠
-- [ ] 管理部门依本规定制定的**安全评估模板**与全国互联网安全管理服务平台的提交流程未收录；模板才是第五、六条在监管方格式下的实际答案 ⚠
+- [ ] 管理部门依本规定制定的**安全评估模板**与全国互联网安全管理服务平台的提交流程未收录；模板才是第五、六条在监管方格式下的实际答案 ⚠ [gap:not_located]
 - [ ] AI 产品按算法推荐规定做算法备案、与按本规定做安全评估，在实践中是一场还是两场手续 ⚠

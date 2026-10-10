@@ -50,5 +50,5 @@ The regulation that turns China's three data pillars into day-to-day obligations
 
 - [ ] Transcribe the article numbers for the classification and important-data duties from the official text
 - [ ] Confirm the user-scale threshold for the "large network platform" provisions ⚠
-- [ ] Add the CAC Q&A and official interpretation links
+- [ ] Add the CAC Q&A and official interpretation links [gap:interpretation_missing]
 - [x] Check whether the Cybersecurity Law amendment changes any cross-reference here — confirmed: the amendment (adopted 2025-10-28, in force 2026-01-01) renumbered the Cybersecurity Law's articles, so any article-level cross-reference must be read against the re-promulgated text

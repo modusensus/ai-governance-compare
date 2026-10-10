@@ -7,7 +7,8 @@ effective: 2026-07-15
 status: in-force
 source: https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm https://www.gov.cn/gongbao/2026/issue_12806/202606/content_7072472.html
 evidence: A
-verified: 2026-10-09
+retrieved: 2026-10-11
+verified: 2026-10-11
 ---
 
 # 人工智能拟人化互动服务管理暂行办法
@@ -65,10 +66,20 @@ verified: 2026-10-09
 - 全文，国务院公报：https://www.gov.cn/gongbao/2026/issue_12806/202606/content_7072472.html
 - 五部门联合公布的公告（网信办，2026-04-10）：https://www.cac.gov.cn/2026-04/10/c_1777558395023172.htm
 
+## 原文引证
+
+下面每一句都是从官方原文逐字抄下，并锚到本卡片依据的那份 `snapshots/` 快照。`node scripts/check-quotes.mjs` 离线复校——引文与原文对不上时会报错，而不是悄悄变成记录。上方的表述是本库的行文，这里才是锚点。
+
+- `（三）注册用户100万以上或者月活跃用户10万以上的` —— 第二十二条的量化门槛 （快照：`snapshots/cn/ai-anthropomorphic-interaction-measures.txt`）
+- `拒不改正或者情节严重的，责令停止提供相关服务，可以并处一万元以上十万元以下罚款；涉及危害公民生命健康安全且有危害后果的，并处十万元以上二十万元以下罚款` —— 第三十条两档罚款 （快照：`snapshots/cn/ai-anthropomorphic-interaction-measures.txt`）
+- `第十八条拟人化互动服务提供者应当履行人工智能生成合成内容标识义务，采取有效措施提示用户正在与人工智能服务而非自然人进行互动` —— 第十八条标识义务与"正在与AI互动"提示 （快照：`snapshots/cn/ai-anthropomorphic-interaction-measures.txt`）
+- `第十四条拟人化互动服务提供者不得向未成年人提供虚拟亲属、虚拟伴侣等虚拟亲密关系的服务` —— 第十四条未成年人禁令 （快照：`snapshots/cn/ai-anthropomorphic-interaction-measures.txt`）
+- `对用户连续使用拟人化互动服务每超过2个小时的，应当以对话或者弹窗等方式提醒用户注意使用时长` —— 两小时提醒 （快照：`snapshots/cn/ai-anthropomorphic-interaction-measures.txt`）
+
 ## 未核验 / TODO
 
-- [ ] "持续性的情感互动"与普通聊天机器人的边界，办法文本没给判定标准；网信办的答记者问或起草说明尚未找到，官方口径待补 ⚠
+- [ ] "持续性的情感互动"与普通聊天机器人的边界，办法文本没给判定标准；网信办的答记者问或起草说明尚未找到，官方口径待补 ⚠ [gap:interpretation_missing]
 - [ ] 第二十三条评估申报与第二十六条年度核验的办理渠道、材料清单、时限，是否有配套指引 ⚠
-- [ ] 跟踪未成年人这条线：《未成年人网络保护条例》之外，2026-09-18 国家网信办已就《国务院关于保障未成年人健康安全使用网络的规定（征求意见稿）》公开征求意见
+- [ ] 跟踪未成年人这条线：《未成年人网络保护条例》之外，2026-09-18 国家网信办已就《国务院关于保障未成年人健康安全使用网络的规定（征求意见稿）》公开征求意见 [gap:not_located]
 - [x] 本办法指向的两部已收录：[《生成式人工智能服务管理暂行办法》](generative-ai-services-measures-zh.md)（2023-08-15 施行）、[《互联网信息服务深度合成管理规定》](deep-synthesis-provisions-zh.md)（2023-01-10 施行），均含中英两版
 - [ ] 同名英文卡片 [Interim Measures for the Administration of AI Anthropomorphic Interaction Services](ai-anthropomorphic-interaction-measures.md) 是本库自译，没有官方英文本；两处措辞不一致时，一律以官方中文文本为准

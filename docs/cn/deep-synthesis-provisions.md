@@ -7,6 +7,7 @@ effective: 2023-01-10
 status: in-force
 source: https://www.cac.gov.cn/2022-12/11/c_1672221949354811.htm https://www.gov.cn/zhengce/zhengceku/2022-12/12/content_5731431.htm
 evidence: A
+retrieved: 2026-10-11
 verified: 2026-10-11
 ---
 
@@ -80,9 +81,24 @@ These provisions, not the AI Act and not the 2025 labelling measures, are where 
 - Announcement of the three departments' joint issuance (gov.cn news): https://www.gov.cn/xinwen/2022-12/12/content_5731429.htm
 - Policy interpretation (gov.cn): https://www.gov.cn/zhengce/2022-12/12/content_5731430.htm
 
+## Source quotes
+
+Every sentence below is copied from the official text and pinned to the snapshot in `snapshots/` that this card was written against. `node scripts/check-quotes.mjs` re-checks them offline, so a quote that stops matching the source fails a check instead of quietly becoming the record. The prose above is a rendering; these are the anchors.
+
+- `（六）三维重建、数字仿真等生成或者编辑数字人物、虚拟场景的技术` — Article 23, the sixth family this card used to omit (snapshot: `snapshots/cn/deep-synthesis-provisions.txt`)
+- `（四）人脸生成、人脸替换、人物属性编辑、人脸操控、姿态操控等生成或者编辑图像、视频内容中生物特征的技术` — Article 23, the biometric family (snapshot: `snapshots/cn/deep-synthesis-provisions.txt`)
+- `采取技术或者人工方式对深度合成服务使用者的输入数据和合成结果进行审核` — Article 10, input and output review (snapshot: `snapshots/cn/deep-synthesis-provisions.txt`)
+- `应当提示深度合成服务使用者依法告知被编辑的个人，并取得其单独同意` — Article 14, separate consent for faces and voices (snapshot: `snapshots/cn/deep-synthesis-provisions.txt`)
+- `任何组织和个人不得采用技术手段删除、篡改、隐匿本规定第十六条和第十七条规定的深度合成标识` — Article 18, the anti-stripping rule (snapshot: `snapshots/cn/deep-synthesis-provisions.txt`)
+- `造成严重后果的，依法从重处罚` — Article 22 — heavier punishment, but no amount of its own (snapshot: `snapshots/cn/deep-synthesis-provisions.txt`)
+- `具有舆论属性或者社会动员能力的深度合成服务提供者` — the Article 19 filing trigger (snapshot: `snapshots/cn/deep-synthesis-provisions.txt`)
+- `明确提出制定完善对算法推荐、深度伪造等新技术应用的规范管理办法` — the policy origin named in the Q&A (snapshot: `snapshots/cn/deep-synthesis-provisions-qa.txt`)
+- `深度合成服务技术支持者应当参照服务提供者履行备案和变更、注销备案手续` — supporters file by reference (snapshot: `snapshots/cn/deep-synthesis-provisions-qa.txt`)
+- `应当按照国家有关规定开展安全评估` — the assessment referral, which supplies no test (snapshot: `snapshots/cn/deep-synthesis-provisions-qa.txt`)
+
 ## Unverified / TODO
 
-- [ ] The English rendering of every article name and term is this repository's own translation — no official English text was found. ⚠
+- [ ] The English rendering of every article name and term is this repository's own translation — no official English text was found. ⚠ [gap:no_official_translation]
 - [x] Read the official policy interpretation above and record how the drafters delimit "public-opinion attributes or social-mobilisation capacity" — read 2026-10-11: **it does not delimit them.** Both mentions restate the trigger and refer the procedure outwards (filing to the algorithm-recommendation provisions, assessment to "relevant national regulations"), so the test has to come from those instruments — see the next item.
 - [x] The instrument that operationalises the trigger is identified and carded — and **this card had its name and year wrong**: it is the *Provisions on the Security Assessment of Internet Information Services with Public-Opinion Attributes or Social-Mobilisation Capacity* (具有舆论属性或社会动员能力的互联网信息服务安全评估规定) — **provisions, not measures**, and **2018-11-15, not 2022** — issued jointly by the CAC and the Ministry of Public Security, seventeen articles, no order number. Its Article 2 is the delimitation the AI instruments defer to → [card](social-mobilisation-security-assessment-provisions.md).
 - [ ] Confirm which MIIT or NRTA rules now apply additionally under Article 24, and whether any have changed since 2023. ⚠
