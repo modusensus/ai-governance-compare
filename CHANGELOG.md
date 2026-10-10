@@ -4,6 +4,14 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+### Added
+
+- `docs/cn/cybersecurity-law.md` — **Penalties (Chapter VI, Articles 61–77)**: all seventeen articles of the liability chapter, transcribed from the re-promulgated text and each tied to the obligation article it enforces. The card previously carried only Article 61's ladder. Four observations fell out of the transcription and are in the card: the RMB 10,000,000 ceiling is reached by **two** roads (Article 61 on security failure, Article 69 on prohibited information); Article 69's top tier is the **only** place in the chapter where suspension, closure and licence revocation are not qualified by 可以 — they follow automatically; the largest exposures are the multiplier-based ones (1–5× illegal gains, 1–10× the procurement amount) rather than any fixed band; and Article 71 lifts the personal-information and cross-border cases out of this chapter altogether, so there the ceiling is PIPL's. `verified` moves to 2026-10-10. The same fetch closes the CII-localisation TODO: the duty is **Article 39** (enforced by Article 71, which refers it out) and the procurement security review is **Article 37** (enforced by Article 67), now named in the obligations table.
+
+### Changed
+
+- The "RMB 10 million" claim in `docs/cn/generative-ai-services-measures.md`, its Chinese version and `docs/cn/ai-law-and-liability.md` is no longer attributed to a "**Articles 61–69**" span, which swept in the seven articles between them that set no such ceiling. It now names the two articles that do and links to the section that transcribes them; the Chinese card's note that the Cybersecurity Law card's penalty section was still missing is removed and that TODO ticked.
+
 ### Fixed
 
 - **Four card TODOs described work that had already shipped.** After the last three releases, `ai-anthropomorphic-interaction-measures.md` and its Chinese version still said the generative-AI and deep-synthesis measures were "uncarded", and the two new cards still asked to close the `compare/01` / `compare/05` penalty ⚠ that had been closed. All four are now ticked with a note naming what resolved them. A backlog that lists finished work is a backlog nobody trusts, so this is treated as a defect, not housekeeping.
