@@ -4,6 +4,10 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+### Fixed
+
+- **Four card TODOs described work that had already shipped.** After the last three releases, `ai-anthropomorphic-interaction-measures.md` and its Chinese version still said the generative-AI and deep-synthesis measures were "uncarded", and the two new cards still asked to close the `compare/01` / `compare/05` penalty ⚠ that had been closed. All four are now ticked with a note naming what resolved them. A backlog that lists finished work is a backlog nobody trusts, so this is treated as a defect, not housekeeping.
+
 ## [0.10.0] - 2026-10-10
 
 ### Added
@@ -43,7 +47,6 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ### Fixed
 
-- **Four card TODOs described work that had already shipped.** After the last three releases, `ai-anthropomorphic-interaction-measures.md` and its Chinese version still said the generative-AI and deep-synthesis measures were "uncarded", and the two new cards still asked to close the `compare/01` / `compare/05` penalty ⚠ that had been closed. All four are now ticked with a note naming what resolved them. A backlog that lists finished work is a backlog nobody trusts, so this is treated as a defect, not housekeeping.
 - **The Chinese penalty ⚠ is closed.** `compare/01-ai-labeling` (both languages) said the penalties under the Generative AI Interim Measures and the Deep Synthesis Provisions still needed checking, and `compare/05-liability-and-pending-law` carried the same open question. Both are now carded and neither states an amount, but they are not the same device: **Article 21** of the generative measures enumerates the Cybersecurity Law, Data Security Law, Personal Information Protection Law and Science and Technology Progress Law and then supplies its own ladder — warning, circulated criticism, order to correct, and suspension on refusal or serious cases — while **Article 22** of the deep-synthesis provisions refers generally to the relevant laws and administrative regulations and aggravates where serious consequences result, with no fallback of its own. The penalty row in `compare/01` moves from **B** to **A**; the two labelling cards and the liability card tick the matching TODO.
 - Both labelling cards' `authority` field named only "CAC and three other departments" / "国家互联网信息办公室等四部门" while the body listed all four, so the site's **发布机关** row disagreed with the text beneath it. The field now carries the four organs in full, matching the notice's 落款.
   - **The labelling measures' `published` date was the web release, not the instrument's own date.** The notice issuing them — 《关于印发〈人工智能生成合成内容标识办法〉的通知》, 国信办通字〔2025〕2号 — is signed by CAC, MIIT, MPS and NRTA **2025-03-07** and was posted on cac.gov.cn on 2025-03-14; `CONTRIBUTING.md` defines `published` as the date the instrument carries, so `docs/cn/ai-generated-content-labeling-measures.md` and its Chinese version now read `published: 2025-03-07`, with the release date kept in the body. The four departments are named, and the 文号 is attributed to the notice rather than to the measures, in both cards, in `compare/01-ai-labeling` (both languages) and in the two overviews' source lists. Verified against the official text on 2026-10-10.
