@@ -43,6 +43,16 @@ const STATUSES = new Set(["in-force", "draft", "proposed", "repealed", "stub"]);
 const NO_TEXT_STATUSES = new Set(["draft", "proposed", "stub"]);
 
 /**
+ * Where an instrument sits in the legislative pipeline. `status` alone cannot say
+ * it: `draft` currently covers both "the State Council has directed a law that
+ * does not exist yet" and "a consultation draft has been published for comment",
+ * and those are different things to cite. `plan` and `public-comment` may never
+ * be cited as obligations; `adopted-not-in-force` is binding from its own
+ * `effective` date and nothing earlier.
+ */
+const STAGES = new Set(["plan", "public-comment", "adopted-not-in-force", "in-force"]);
+
+/**
  * The three timestamps a card can carry. `verified` (required) is when *we* last
  * checked; `retrieved` is when the snapshot was pulled; `source_updated` is when
  * the text itself last changed. Collapsing them into one field hides staleness:
@@ -184,6 +194,32 @@ function checkFrontMatter(file, text) {
   const status = fields.get("status");
   if (status && !STATUSES.has(status)) {
     fail(file_, `status: ${status} — must be one of ${[...STATUSES].join(" / ")}`);
+  }
+
+  const stage = fields.get("stage");
+  if (stage && !STAGES.has(stage)) {
+    fail(file_, `stage: ${stage} — must be one of ${[...STAGES].join(" / ")}`);
+  }
+  if (status && NO_TEXT_STATUSES.has(status) && !stage) {
+    fail(
+      file_,
+      `status: ${status} without a stage — say which kind: plan (directed, no text), public-comment (a consultation draft), adopted-not-in-force`
+    );
+  }
+  if (status === "in-force" && stage && stage !== "in-force") {
+    fail(file_, `status: in-force with stage: ${stage} — an instrument in force is not also at stage ${stage}`);
+  }
+  if (stage === "in-force" && status !== "in-force") {
+    fail(file_, `stage: in-force requires status: in-force`);
+  }
+  if ((stage === "plan" || stage === "public-comment") && fields.get("effective") && fields.get("effective") !== "—") {
+    fail(
+      file_,
+      `stage: ${stage} carries effective: ${fields.get("effective")} — a law that does not exist yet, or is still in consultation, has no entry-into-force date. Give it when the text is adopted.`
+    );
+  }
+  if (stage === "adopted-not-in-force" && !isRealDate(fields.get("effective"))) {
+    fail(file_, "stage: adopted-not-in-force needs a real `effective` date — that is the whole point of the stage");
   }
 
   for (const key of DATE_KEYS) {

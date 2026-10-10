@@ -66,6 +66,7 @@ In a law card, `evidence` in the front matter grades the card as a whole — A m
 ## Checklist before you commit
 
 - [ ] Complete front matter; `source` is the official text, not a summary page
+- [ ] If the instrument is not in force, `stage` says where it is — `plan`, `public-comment` or `adopted-not-in-force`
 - [ ] `published` is the date the instrument carries, `effective` is entry into force (use `applies` for the date it starts to bind)
 - [ ] Every key fact carries an evidence grade
 - [ ] `verified` is today's date, and `retrieved` / `source_updated` say which moment they mean

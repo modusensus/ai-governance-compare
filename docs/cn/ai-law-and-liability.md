@@ -5,6 +5,7 @@ authority: NPC and State Council
 published: —
 effective: —
 status: draft
+stage: plan                # directed in the State Council 2026 legislative plan; no text exists to consult
 source: https://www.moj.gov.cn/pub/sfbgw/zwgkztzl/xxxcgcxjpfzsx/fzsxyw/202605/t20260511_534688.html
 evidence: B
 verified: 2026-10-10
