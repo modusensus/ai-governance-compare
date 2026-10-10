@@ -7,7 +7,7 @@ effective: 2023-01-10
 status: in-force
 source: https://www.cac.gov.cn/2022-12/11/c_1672221949354811.htm https://www.gov.cn/zhengce/zhengceku/2022-12/12/content_5731431.htm
 evidence: A
-verified: 2026-10-10
+verified: 2026-10-11
 ---
 
 # Provisions on the Administration of Deep Synthesis of Internet Information Services
@@ -23,7 +23,7 @@ Anyone offering deep-synthesis services to the public in China must verify users
 ## Who and what it governs
 
 - **Scope (Article 2)** — applying deep-synthesis technology to provide internet information services inside mainland China. Where other laws or administrative regulations provide otherwise, those apply.
-- **Deep-synthesis technology (Article 23)** — using generative and synthesising algorithms such as deep learning and virtual reality to produce text, images, audio, video or virtual scenes; the article lists five families, including text generation and style transfer, text-to-speech and voice conversion, music and scene-sound generation, **face generation, face swap, attribute editing, face and pose manipulation**, and image generation, enhancement and restoration. "Immersive simulated scenes" are defined as highly realistic virtual scenes generated or edited by the technology that participants can experience or interact with.
+- **Deep-synthesis technology (Article 23)** — using generative and synthesising algorithms such as deep learning and virtual reality to produce text, images, audio, video or virtual scenes; the list is expressly open-ended ("including but not limited to") and names **six** families: text generation, style transfer and question-answering; text-to-speech, voice conversion and voice-attribute editing; music generation and scene-sound editing; **face generation, face swap, person-attribute editing, face manipulation and pose manipulation**; image generation, enhancement and restoration; and **three-dimensional reconstruction and digital simulation**, used to generate or edit digital humans and virtual scenes. The same article defines the three actors — provider, technical supporter and **user** (深度合成服务使用者) — together with training data and **immersive simulated scenes**, the last being highly realistic virtual scenes generated or edited with the technology that participants can experience or interact with.
 - **Two duty-holders** — the **service provider** (深度合成服务提供者) and the **technical supporter** (技术支持者). Article 19 makes technical supporters file on the same terms as providers; Articles 14, 15 and 21 place duties on both.
 - **Regulators (Article 3)** — CAC coordinates nationally and locally; the telecom authority (MIIT) and public security act within their remit.
 
@@ -52,6 +52,16 @@ Anyone offering deep-synthesis services to the public in China must verify users
 
 Articles 16, 17 and 18 are where China's AI-content labelling regime began: a **technical label that must not get in the user's way**, a **prominent label where confusion is possible**, and a **prohibition on removing either**. That three-part structure is the ancestor of the 2025 [Measures for Labelling AI-Generated Synthetic Content](ai-generated-content-labeling-measures.md) and its mandatory standard GB 45438-2025, which supply the format detail the provisions themselves leave open; the 2026 [Anthropomorphic Interaction Services Measures](ai-anthropomorphic-interaction-measures.md) Article 18 likewise points back at the labelling duty rather than replacing it. Both earlier instruments remain in force — reading the three as a stack rather than a replacement is this repository's characterisation, not a statement in the texts. — **C**
 
+## What the official Q&A adds, and what it does not
+
+The CAC answered reporters on the day the provisions were posted ([gov.cn policy interpretation, 2022-12-12](https://www.gov.cn/zhengce/2022-12/12/content_5731430.htm); the page credits the CAC site). Three things belong on the record, and one absence matters more than any of them.
+
+- **Where the rule came from.** The Q&A's background answer cites 《法治社会建设实施纲要（2020-2025年）》 as having expressly called for rules on new technology applications — its words are 制定完善对算法推荐、深度伪造等新技术应用的规范管理办法 — which is the common origin of these provisions and of the algorithm-recommendation provisions.
+- **Who files and who assesses: restated, not delimited.** Question seven repeats the trigger and sends the *procedure* to the *Provisions on the Administration of Algorithmic Recommendations*; question eight repeats it for **new products, new applications and new functions** and sends the assessment to "relevant national regulations" (按照国家有关规定). **Neither supplies a test for "public-opinion attributes or social-mobilisation capacity"** — the delimitation lives in the instruments the referral points at, and this repository has not yet carded them.
+- **Technical supporters are named inside the referral.** They file, amend and cancel "by reference to the service provider" (参照服务提供者), and filing numbers must be displayed prominently with a link to the public information — matching Article 19 rather than extending it.
+
+The rest paraphrases Articles 6–19 and 21: the primary-responsibility list, input-and-output review backed by a feature library, the rumour-response mechanism, the three-part labelling duty, and the inspection powers — where a material information-security risk is found, the authorities may require suspension of information updates, of new account registration, or of other services. Nothing in it reaches further than the text. — **B**
+
 ## Relationship to other laws
 
 - **Legal basis named in Article 1** — Cybersecurity Law, Data Security Law, Personal Information Protection Law and the *Measures for the Administration of Internet Information Services*.
@@ -73,7 +83,8 @@ These provisions, not the AI Act and not the 2025 labelling measures, are where 
 ## Unverified / TODO
 
 - [ ] The English rendering of every article name and term is this repository's own translation — no official English text was found. ⚠
-- [ ] Read the official policy interpretation above and record how the drafters delimit "public-opinion attributes or social-mobilisation capacity" — it decides who files and who assesses. ⚠
+- [x] Read the official policy interpretation above and record how the drafters delimit "public-opinion attributes or social-mobilisation capacity" — read 2026-10-11: **it does not delimit them.** Both mentions restate the trigger and refer the procedure outwards (filing to the algorithm-recommendation provisions, assessment to "relevant national regulations"), so the test has to come from those instruments — see the next item.
+- [ ] The instrument that actually operationalises the trigger is the *Measures for Security Assessment of Internet Information Services with Public-Opinion Attributes or Social-Mobilisation Capacity* (2022): not carded here, text not checked against the official source. ⚠
 - [ ] Confirm which MIIT or NRTA rules now apply additionally under Article 24, and whether any have changed since 2023. ⚠
 - [ ] Check the interaction with the 2025 labelling measures and GB 45438-2025 in practice: which label specification regulators cite for a given case. ⚠
 - [x] Close the ⚠ in `compare/01-ai-labeling.md` about penalties under the deep-synthesis provisions using Article 22: this instrument sets **no fine amount of its own** — done: the penalty row and the limits bullet in `compare/01` (both languages) and in `compare/05` now carry it, and the row moved from **B** to **A**.
