@@ -76,4 +76,4 @@ These provisions, not the AI Act and not the 2025 labelling measures, are where 
 - [ ] Read the official policy interpretation above and record how the drafters delimit "public-opinion attributes or social-mobilisation capacity" — it decides who files and who assesses. ⚠
 - [ ] Confirm which MIIT or NRTA rules now apply additionally under Article 24, and whether any have changed since 2023. ⚠
 - [ ] Check the interaction with the 2025 labelling measures and GB 45438-2025 in practice: which label specification regulators cite for a given case. ⚠
-- [ ] Close the ⚠ in `compare/01-ai-labeling.md` about penalties under the deep-synthesis provisions using Article 22: this instrument sets **no fine amount of its own**.
+- [x] Close the ⚠ in `compare/01-ai-labeling.md` about penalties under the deep-synthesis provisions using Article 22: this instrument sets **no fine amount of its own** — done: the penalty row and the limits bullet in `compare/01` (both languages) and in `compare/05` now carry it, and the row moved from **B** to **A**.
