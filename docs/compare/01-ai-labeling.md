@@ -2,7 +2,7 @@
 title: Labelling regimes compared — EU AI Act Article 50 vs China's labelling measures
 type: compare
 evidence: graded per item, sources below
-verified: 2026-10-10
+verified: 2026-10-11
 ---
 
 # Labelling regimes compared — EU AI Act Article 50 vs China's labelling measures
