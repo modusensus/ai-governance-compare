@@ -15,3 +15,7 @@ desktop.ini
 
 # 站点构建产物（node scripts/build-site.mjs 生成，由 Site workflow 部署）
 /_site/
+
+# Qoder 本机产物与未提交的提案（不入库）
+/.qoder-credits/
+/PROPOSALS/
