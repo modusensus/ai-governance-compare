@@ -74,4 +74,4 @@ China now regulates the **emotional effect of a model on a named user** — depe
 - [ ] Read the regulators' Q&A / drafting notes for this measure and record the official reading of "sustained emotional interaction" — the boundary with an ordinary chatbot is a facts-and-degree question the text does not settle. ⚠
 - [ ] Confirm whether implementing guidance exists for the Article 22 assessment filing and the Article 26 annual verification (forms, channels, deadlines). ⚠
 - [ ] Track related instruments this measure cross-references: 未成年人网络保护条例 and the draft State Council regulation on minors' safe network use put out for comment 2026-09-18.
-- [ ] Add the missing cards it points at: Interim Measures for Generative AI Services (2023-08-15) and Provisions on Deep Synthesis (2023-01-10) are still uncarded.
+- [x] Add the missing cards it points at — done: [Interim Measures for Generative AI Services](generative-ai-services-measures.md) and [Provisions on the Administration of Deep Synthesis](deep-synthesis-provisions.md) are both carded, each with a Chinese version.
