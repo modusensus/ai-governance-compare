@@ -29,6 +29,7 @@ published: 2025-03-07       # the date the instrument carries (adoption or signa
 effective: 2025-09-01       # date of entry into force
 applies: 2025-09-01         # optional: date it first binds those it governs, if that differs
 status: in-force            # in-force / draft / proposed / repealed / stub
+stage: in-force             # plan / public-comment / adopted-not-in-force / in-force — required when status is draft, proposed or stub
 source: <link to the official text>
 evidence: A                 # the card's own grade — A / B / C, see docs/README.md
 verified: 2026-10-06        # date you last checked the source
@@ -52,6 +53,17 @@ The three date fields mean exactly one thing each. Do not blur them:
 `status: stub` means the card exists but the official text has not been secured yet; leave `source` empty and state in the body what is missing.
 
 **Three timestamps, not one.** `verified` answers *when we last checked*; `retrieved` answers *when the snapshot was pulled*; `source_updated` answers *when the law itself changed*. They come apart constantly — the Cybersecurity Law changed on 2026-01-01 and this repository read it on 2026-10-10 — and a single field forces one of the two meanings to be dropped. Give `source_updated` whenever the text has an amendment, a re-promulgation or a renumbering after its `effective` date; the checker **fails** a card whose `source_updated` is later than its `verified`, because that is the exact shape of a card that has silently gone stale.
+
+**`stage` says where in the pipeline.** `status: draft` on its own is ambiguous in a way that matters: it covers both "the legislature has directed a law that has no text yet" and "a consultation draft is out for comment", and only the second has anything to read. So a card whose `status` is `draft`, `proposed` or `stub` **must** carry a `stage`:
+
+| `stage` | Meaning | Citation rule |
+|---|---|---|
+| `plan` | directed, announced or on a legislative work plan — no text exists | never cite an obligation from it; cite the plan itself |
+| `public-comment` | a consultation draft is published for comment | cite as a proposal only, and say it is not adopted |
+| `adopted-not-in-force` | signed and promulgated, awaiting entry into force | needs a real `effective` date; nothing binds before it |
+| `in-force` | in force | the only stage that pairs with `status: in-force` |
+
+`plan` and `public-comment` may not carry an `effective` date — there is no instrument to date — and `adopted-not-in-force` may not omit one.
 
 ### Quote anchors and typed gaps
 
@@ -116,6 +128,7 @@ lychee --config .lychee.toml --no-progress './**/*.md'   # external links
 - a `source` whose host is not an official publication;
 - a link under an "Official sources" heading that is not on an official host;
 - a relative link that does not resolve;
+- a `stage` outside `plan / public-comment / adopted-not-in-force / in-force`, a `status: draft / proposed / stub` with no `stage`, a stage that contradicts its status, or a `plan` / `public-comment` card carrying an `effective` date;
 - a `[gap:…]` tag whose type is not one of the five declared types, or that sits on a TODO already checked off;
 - a card carrying a quote section without a `retrieved` date;
 - a `skills/<name>/SKILL.md` whose front matter does not open the file, whose `name` or `description` is empty, or whose `name` does not match its directory.
