@@ -7,7 +7,8 @@ effective: 2024-08-01
 status: in-force
 source: https://eur-lex.europa.eu/eli/reg/2024/1689/oj https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng
 evidence: A
-verified: 2026-10-06
+retrieved: 2026-10-11
+verified: 2026-10-11
 ---
 
 # Artificial Intelligence Act (AI Act)
@@ -42,7 +43,7 @@ The EU's first cross-sector AI statute: AI systems are sorted into four risk tie
 | 2025-02-02 | prohibitions and the AI literacy duty |
 | 2025-08-02 | obligations for general-purpose AI (GPAI) models, governance, penalties |
 | 2026-08-02 | transparency obligations in Article 50 |
-| 2026-12-02 | end of the grace period for machine-readable marking of generative systems placed on the market before 2026-08-02; new prohibitions added by the amendment (⚠ date to confirm against the amending regulation) |
+| 2026-12-02 | end of the grace period for machine-readable marking of generative systems placed on the market before 2026-08-02 (introduced by Regulation (EU) 2026/1744) |
 | **2027-12-02** | high-risk systems listed in **Annex III** — deferred from 2026-08-02 |
 | **2028-08-02** | high-risk systems embedded in regulated products (**Annex I**) — deferred from 2027-08-02 |
 
@@ -63,6 +64,15 @@ Up to **EUR 35 million** or **7% of total worldwide annual turnover**, whichever
 
 - [x] Add the EUR-Lex link to the official text — https://eur-lex.europa.eu/eli/reg/2024/1689/oj
 - [x] Verify each stage date against the official timeline — done; the high-risk stages were deferred by Regulation (EU) 2026/1744
-- [ ] Confirm the date from which the new Article 5 prohibitions apply, and the rest of the amendment's changes to the Act
+- [ ] Confirm the date from which the new Article 5 prohibitions apply, and the rest of the amendment's changes to the Act [gap:not_located]
 - [ ] Complete the GPAI chapter: model cards, training-data summaries, copyright policy, adversarial testing for systemic risk
-- [ ] Confirm the three penalty tiers (amounts and percentages)
+- [x] Confirm the three penalty tiers (amounts and percentages) — Article 99(3), (4) and (5), anchored below
+
+## Source quotes
+
+- `Non-compliance with the prohibition of the AI practices referred to in Article 5 shall be subject to administrative fines of up to EUR 35 000 000 or, if the offender is an undertaking, up to 7 % of its total worldwide annual turnover for the preceding financial year, whichever is higher.` — Article 99(3) — the top penalty tier in the Penalties section (snapshot: `snapshots/eu/ai-act.txt`)
+- `shall be subject to administrative fines of up to EUR 15 000 000 or, if the offender is an undertaking, up to 3 % of its total worldwide annual turnover for the preceding financial year, whichever is higher` — Article 99(4) — the middle tier (snapshot: `snapshots/eu/ai-act.txt`)
+- `shall be subject to administrative fines of up to EUR 7 500 000 or, if the offender is an undertaking, up to 1 % of its total worldwide annual turnover for the preceding financial year, whichever is higher` — Article 99(5) — the lowest tier (snapshot: `snapshots/eu/ai-act.txt`)
+- `shall apply from 2 August 2026. However: (a) Chapters I and II shall apply from 2 February 2025; (b) Chapter III Section 4, Chapter V, Chapter VII and Chapter XII and Article 78 shall apply from 2 August 2025, with the exception of Article 101;` — Article 113 — the staged application dates in the card's timeline (snapshot: `snapshots/eu/ai-act.txt`)
+- `the date of application of Sections 1, 2 and 3 of Chapter III is set to 2 December 2027 for AI systems classified as high-risk pursuant to Article 6(2) and Annex III, and to 2 August 2028 for AI systems classified as high-risk pursuant to Article 6(1) and Annex I` — Regulation (EU) 2026/1744 — the Annex III and Annex I deferrals the card flags (snapshot: `snapshots/eu/ai-act-amendment.txt`)
+- `Providers of AI systems, including general-purpose AI systems, generating synthetic audio, image, video or text content, that have been placed on the market before 2 August 2026 shall take the necessary steps in order to comply with Article 50(2) by 2 December 2026` — Regulation (EU) 2026/1744 — the grace period that ends 2 December 2026 (snapshot: `snapshots/eu/ai-act-amendment.txt`)

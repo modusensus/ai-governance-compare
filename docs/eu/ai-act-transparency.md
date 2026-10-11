@@ -8,7 +8,8 @@ applies: 2026-08-02
 status: in-force
 source: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
 evidence: A
-verified: 2026-10-06
+retrieved: 2026-10-11
+verified: 2026-10-11
 ---
 
 # AI Act Article 50 — Transparency Obligations
@@ -27,7 +28,7 @@ The AI Act's disclosure clause: in defined situations, providers and deployers m
 - Four situations are covered:
   1. **Direct interaction with an AI system** (e.g. chatbots) — users must be informed;
   2. **Synthetic content** — AI-generated audio, image, video and text must carry **machine-readable marking**;
-  3. **Deepfakes** — content that is artificially generated or manipulated must be disclosed as such;
+  3. **Deep fakes** — content that is artificially generated or manipulated must be disclosed as such;
   4. **Emotion recognition and biometric categorisation** — affected people must be informed.
 
 ## Timeline
@@ -58,3 +59,11 @@ The AI Act was amended by **Regulation (EU) 2026/1744** (the Digital Omnibus on 
 - [x] Verify the exact wording and scope of the 2026-12-02 transition deadline — confirmed: a grace period introduced by Regulation (EU) 2026/1744 for systems placed on the market before 2026-08-02
 - [x] Add the official link to the Commission guidelines and summarise the key points — https://digital-strategy.ec.europa.eu/en/policies/guidelines-ai-transparency-obligations
 - [x] Confirm the applicable penalty tier and percentage — Article 99(4): EUR 15 million or 3% of worldwide annual turnover
+
+## Source quotes
+
+- `Providers shall ensure that AI systems intended to interact directly with natural persons are designed and developed in such a way that the natural persons concerned are informed that they are interacting with an AI system` — Article 50(1) — the interaction-disclosure duty (snapshot: `snapshots/eu/ai-act.txt`)
+- `Providers of AI systems, including general-purpose AI systems, generating synthetic audio, image, video or text content, shall ensure that the outputs of the AI system are marked in a machine-readable format and detectable as artificially generated or manipulated.` — Article 50(2) — machine-readable marking of synthetic content (snapshot: `snapshots/eu/ai-act.txt`)
+- `Deployers of an AI system that generates or manipulates image, audio or video content constituting a deep fake, shall disclose that the content has been artificially generated or manipulated.` — Article 50(4) — deep fake disclosure; the official text spells it as two words, and so does the card after this pass (snapshot: `snapshots/eu/ai-act.txt`)
+- `shall be subject to administrative fines of up to EUR 15 000 000 or, if the offender is an undertaking, up to 3 % of its total worldwide annual turnover for the preceding financial year, whichever is higher` — Article 99(4) — the tier the Penalties section applies to Article 50 breaches (snapshot: `snapshots/eu/ai-act.txt`)
+- `Providers of AI systems, including general-purpose AI systems, generating synthetic audio, image, video or text content, that have been placed on the market before 2 August 2026 shall take the necessary steps in order to comply with Article 50(2) by 2 December 2026` — Regulation (EU) 2026/1744 — the 2026-12-02 row of the timeline (snapshot: `snapshots/eu/ai-act-amendment.txt`)

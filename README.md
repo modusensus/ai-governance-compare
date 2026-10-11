@@ -82,10 +82,12 @@ assets/
 scripts/
 ├── check-docs.mjs           # the offline checks CI runs
 ├── check-quotes.mjs         # are the quoted sentences still in the official text?
+├── snapshot.mjs             # fetches an official text into snapshots/ (run by hand, not in CI)
 ├── build-site.mjs           # renders docs/ into _site/, which Pages serves
 └── site/                    # the stylesheet and the one vendored dependency
 snapshots/
-└── cn/                      # the official texts the CN cards were written against, with source URL and hash
+├── cn/                      # the official texts the CN cards were written against, with source URL and hash
+└── eu/                      # the same for the EU cards, pulled from EUR-Lex
 ```
 
 ## Language

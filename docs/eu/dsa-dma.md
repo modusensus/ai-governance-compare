@@ -7,7 +7,8 @@ effective: 2022-11-16        # DSA; DMA entered into force 2022-11-01
 status: in-force
 source: https://eur-lex.europa.eu/eli/reg/2022/2065/oj https://eur-lex.europa.eu/eli/reg/2022/1925/oj
 evidence: A
-verified: 2026-10-06
+retrieved: 2026-10-11
+verified: 2026-10-11
 ---
 
 # Digital Services Act (DSA) and Digital Markets Act (DMA)
@@ -58,6 +59,14 @@ Gatekeeper obligations include:
 
 ## Unverified / TODO
 
-- [ ] List currently designated VLOPs/VLOSEs and gatekeepers with dates
+- [ ] List currently designated VLOPs/VLOSEs and gatekeepers with dates [gap:not_located] — designation decisions are separate official documents; the 2023-08-25 and 2024-03-07 dates are not in either regulation's text
 - [ ] Summarise the DSA guidelines on recommender-system transparency
-- [ ] Confirm the Article 30 repeat-infringement tier wording
+- [x] Confirm the Article 30 repeat-infringement tier wording — Article 30(2): fines "up to 20 % of its total worldwide turnover", anchored below
+
+## Source quotes
+
+- `Member States shall ensure that the maximum amount of fines that may be imposed for a failure to comply with an obligation laid down in this Regulation shall be 6 % of the annual worldwide turnover of the provider of intermediary services concerned in the preceding financial year.` — DSA Article 52(3) — the 6 % ceiling in the DSA penalties article (snapshot: `snapshots/eu/dsa.txt`)
+- `This Regulation shall apply from 17 February 2024.` — DSA Article 93(2) — the 2024-02-17 row of the timeline (snapshot: `snapshots/eu/dsa.txt`)
+- `the Commission may impose on a gatekeeper fines not exceeding 10 % of its total worldwide turnover in the preceding financial year` — DMA Article 30(1) — the 10 % tier (snapshot: `snapshots/eu/dma.txt`)
+- `the Commission may impose on a gatekeeper fines up to 20 % of its total worldwide turnover in the preceding financial year where it finds that a gatekeeper has committed the same or a similar infringement` — DMA Article 30(2) — the 20 % repeat-infringement tier the card's TODO asked to confirm (snapshot: `snapshots/eu/dma.txt`)
+- `It shall apply from 2 May 2023.` — DMA Article 54 — the date the regulation applies from (snapshot: `snapshots/eu/dma.txt`)
