@@ -8,7 +8,8 @@ applies: 2018-05-25
 status: in-force
 source: https://eur-lex.europa.eu/eli/reg/2016/679/oj
 evidence: A
-verified: 2026-10-06
+retrieved: 2026-10-11
+verified: 2026-10-11
 ---
 
 # GDPR Chapter V — Transfers of personal data to third countries
@@ -45,3 +46,8 @@ The EU runs a **country-level trust model plus standardised contracts**: if the 
 - [ ] List the current adequacy decisions with dates
 - [ ] Note the status of the EU–US Data Privacy Framework and any pending challenge
 - [ ] Summarise the 2021 SCC modules (controller-to-controller, controller-to-processor, etc.)
+
+## Source quotes
+
+- `Any transfer of personal data which are undergoing processing or are intended for processing after transfer to a third country or to an international organisation shall take place only if, subject to the other provisions of this Regulation, the conditions laid down in this Chapter are complied with by the controller and processor` — Article 44 — the general principle the whole chapter rests on (snapshot: `snapshots/eu/gdpr.txt`)
+- `In the absence of a decision pursuant to Article 45(3), a controller or processor may transfer personal data to a third country or an international organisation only if the controller or processor has provided appropriate safeguards, and on condition that enforceable data subject rights and effective legal remedies for data subjects are available.` — Article 46(1) — the safeguards route the card's Article 46 row describes (snapshot: `snapshots/eu/gdpr.txt`)

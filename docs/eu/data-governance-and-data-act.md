@@ -7,7 +7,8 @@ effective: 2022-06-23        # DGA; Data Act entered into force 2024-01-11
 status: in-force
 source: https://eur-lex.europa.eu/eli/reg/2022/868/oj https://eur-lex.europa.eu/eli/reg/2023/2854/oj
 evidence: A
-verified: 2026-10-06
+retrieved: 2026-10-11
+verified: 2026-10-11
 ---
 
 # Data Governance Act and Data Act
@@ -36,8 +37,8 @@ What it does:
 
 | Date | Event |
 |---|---|
-| 2024-01-11 ⚠ | entered into force |
-| **2025-09-12** ⚠ | became applicable |
+| 2024-01-11 | entered into force (twentieth day after the OJ publication of 22 December 2023 — not the 13 December signature date) |
+| **2025-09-12** | became applicable |
 
 What it does:
 
@@ -53,7 +54,17 @@ What it does:
 
 ## Unverified / TODO
 
-- [ ] Confirm the Data Act's entry-into-force and application dates against EUR-Lex
-- [ ] Add the EUR-Lex links for both regulations
+- [x] Confirm the Data Act's entry-into-force and application dates against EUR-Lex — entry into force 2024-01-11 (twentieth day after the **22 December 2023** OJ publication; 13 December 2023 is the signature date the instrument carries, not the OJ date), applies from 2025-09-12
+- [x] Add the EUR-Lex links for both regulations — both are in the source field
 - [ ] Note the registration conditions for data intermediation services
 - [ ] Summarise the interplay with the AI Act's data-governance duties for high-risk systems
+
+## Source quotes
+
+- `It shall apply from 24 September 2023.` — DGA Article 38 — the 2023-09-24 row of the timeline (snapshot: `snapshots/eu/dga.txt`)
+- `Member States should lay down rules on penalties applicable to infringements of this Regulation and should take all measures necessary to ensure that they are implemented.` — DGA recital — penalties are left to the Member States; the DGA sets no EU-level fine cap (snapshot: `snapshots/eu/dga.txt`)
+- `It shall apply from 12 September 2025.` — Data Act final provisions — the 2025-09-12 row the card flags (snapshot: `snapshots/eu/data-act.txt`)
+- `Competent authorities should ensure that infringements of the obligations laid down in this Regulation are subject to penalties.` — Data Act recital — no EU-level fine cap in the Data Act either; Article 83 GDPR amounts are borrowed by cross-reference (snapshot: `snapshots/eu/data-act.txt`)
+- `shall enter into force on the twentieth day following that of its publication in the Official Journal of the European Union.` — DGA Article 38 — the rule behind the **2022-06-23** entry into force: this snapshot's masthead carries the OJ publication date **3 June 2022**, and twenty days later is 23 June 2022. The 30 May signature date below is a different thing and would give 19 June (snapshot: `snapshots/eu/dga.txt`)
+- `Done at Brussels, 30 May 2022.` — DGA — the signature date, recorded for completeness: the entry-into-force rule counts from the OJ publication date, not from this one (snapshot: `snapshots/eu/dga.txt`)
+- `shall enter into force on the twentieth day following that of its publication in the Official Journal of the European Union.` — Data Act Article 50 — the same rule; this snapshot's masthead carries the OJ publication date **22 December 2023**, and twenty days later is 11 January 2024. Again the rule counts from the OJ date, not the 13 December signature date (snapshot: `snapshots/eu/data-act.txt`)

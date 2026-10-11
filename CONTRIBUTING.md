@@ -69,7 +69,7 @@ The three date fields mean exactly one thing each. Do not blur them:
 
 A card that renders a foreign-language law is a translation, and a translation drifts. This repository caught itself twice — writing 或者 as 或 in five places, and describing a six-item statutory list as five items — and neither error was visible on the page. The mechanism that catches them is a quote anchor:
 
-- `snapshots/<jurisdiction>/<slug>.txt` holds the official text as plain text, whitespace removed, with a header recording the `# source:` URL, `# retrieved:` date and `# sha256(body):` of what follows. Statute text published by a government is not our composition; keeping a copy is what makes the check offline.
+- `snapshots/<jurisdiction>/<slug>.txt` holds the official text as plain text, with a header recording the `# source:` URL, the `# retrieved:` date, the `# extraction:` rule and the `# sha256(body):` of what follows. Two extraction rules, because the languages differ: Chinese is flattened by deleting every whitespace character (lossless for CJK); English keeps its line structure and word boundaries — scripts and styles dropped, block-level tags turned into newlines, inline tags dropped (an `<a>` in the middle of "deep fakes" would otherwise split the phrase), entities unescaped, soft hyphens and zero-width marks stripped. Both end up whitespace-insensitive to the checker, which compares with all whitespace removed, so the recorded hash and `# chars` mean the same thing on a CN snapshot and an EU one. Statute text published by a government is not our composition; keeping a copy is what makes the check offline. `node scripts/snapshot.mjs --eu` builds the EU set; `--rehash` rewrites only the header of snapshots already on disk (offline).
 - The card ends with a section headed `## Source quotes` (English cards) or `## 原文引证` (Chinese cards). Each bullet is one span of the **official original**, in backticks, then where the card relies on it, then the snapshot in backticks:
 
   ```markdown
@@ -89,7 +89,7 @@ Absence is typed as well. A TODO that records something missing ends with `[gap:
 | `no_official_translation` | no official text in the other language | every CN card's English rendering |
 | `interpretation_missing` | no official Q&A or drafting note to cite | the anthropomorphic-services measures |
 
-The type is the answer to "what would it take to close this?", which a blank or a bare `⚠` does not give. A backlog that cannot distinguish those five is not plannable — 77 open TODOs become one number instead of five different jobs.
+The type is the answer to "what would it take to close this?", which a blank or a bare `⚠` does not give. A backlog that cannot distinguish those five is not plannable — 76 open TODOs become one number instead of five different jobs.
 
 ## Writing rules
 
@@ -137,7 +137,7 @@ lychee --config .lychee.toml --no-progress './**/*.md'   # external links
 
 Two things the checker deliberately lets through: links inside fenced code blocks and inline code spans (they are examples, not links), and a link on a line that says in words that it is *not* an official source (`not an official source`, `非官方来源`) — label it honestly and it may stay.
 
-CI runs from GitHub's runners, which cannot reliably reach sites that only serve mainland China. `.lychee.toml` excludes those hosts; run the link check from a network inside China to cover them. That is why the quote check is offline: 28 of the 45 URLs in `docs/` are hosts CI never reaches, so "is the sentence still there" cannot depend on reaching them.
+CI runs from GitHub's runners, which cannot reliably reach sites that only serve mainland China. `.lychee.toml` excludes those hosts; run the link check from a network inside China to cover them. That is why the quote check is offline: 29 of the 46 distinct URLs in `docs/` are hosts CI never reaches, so "is the sentence still there" cannot depend on reaching them.
 
 The same is true, for a different reason, of EUR-Lex. It sits behind a filter that treats datacenter traffic erratically: from a runner the identical URL alternates between a real `200`, an empty `202`, a `502`, a `503` and a connect timeout, and the answer does not depend on the User-Agent. `.lychee.toml` therefore keeps the request rate low, counts every `5xx` as reachable, and keeps the retry budget generous; on top of that the `External links` job runs the whole check a second time before it reports failure. What survives two passes is a link that is really broken — a `404`, a `410`, or a host that does not resolve — so take a reported error at face value. The one exception: if the error is on `eur-lex.europa.eu` and the URL opens fine in your browser, it was a timeout, and re-running the job is the fix.
 

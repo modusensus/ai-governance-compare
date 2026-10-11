@@ -8,7 +8,8 @@ applies: 2026-12-09          # Member State transposition deadline (Article 22)
 status: in-force
 source: https://eur-lex.europa.eu/eli/dir/2024/2853/oj
 evidence: A
-verified: 2026-10-06
+retrieved: 2026-10-11
+verified: 2026-10-11
 ---
 
 # Product liability and the withdrawn AI Liability Directive
@@ -51,3 +52,9 @@ What it changes:
 - [x] Official Journal publication date (2024-11-18) and the transposition deadline (2026-12-09, Article 22) confirmed against the directive text
 - [ ] Note the extent of the "software as product" definition (including SaaS and updates)
 - [ ] Cross-reference the AI Act's relationship to liability and its conformity-assessment duties
+
+## Source quotes
+
+- `Member States shall bring into force the laws, regulations and administrative provisions necessary to comply with this Directive by 9 December 2026.` — PLD Article 22(1) — the 2026-12-09 transposition deadline (snapshot: `snapshots/eu/pld.txt`)
+- `who has presented facts and evidence sufficient to support the plausibility of the claim for compensation, the defendant is required to disclose relevant evidence that is at the defendant’s disposal, subject to the conditions set out in this Article.` — PLD Article 9(1) — the disclosure-of-evidence duty the card relies on (snapshot: `snapshots/eu/pld.txt`)
+- `national courts should presume the defectiveness of a product where a defendant fails to comply with such an obligation` — PLD recital — the presumption that follows a refusal to disclose (snapshot: `snapshots/eu/pld.txt`)

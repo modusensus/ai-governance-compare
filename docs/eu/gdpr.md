@@ -8,7 +8,8 @@ applies: 2018-05-25
 status: in-force
 source: https://eur-lex.europa.eu/eli/reg/2016/679/oj
 evidence: A
-verified: 2026-10-06
+retrieved: 2026-10-11
+verified: 2026-10-11
 ---
 
 # General Data Protection Regulation (GDPR)
@@ -45,6 +46,12 @@ A regulation built on rights: it sets principles for processing, a closed list o
 
 ## Unverified / TODO
 
-- [ ] Confirm the current text of the SCCs adopted under Article 46
+- [ ] Confirm the current text of the SCCs adopted under Article 46 [gap:not_located] — the SCCs are a Commission implementing decision, not part of this regulation's text
 - [ ] Check the EU–US Data Privacy Framework's current status
 - [ ] Note the interplay between GDPR and the AI Act's data-governance duties for high-risk systems
+
+## Source quotes
+
+- `administrative fines up to 10 000 000 EUR, or in the case of an undertaking, up to 2 % of the total worldwide annual turnover of the preceding financial year, whichever is higher` — Article 83(4) — the lower band in the card's Penalties row (snapshot: `snapshots/eu/gdpr.txt`)
+- `administrative fines up to 20 000 000 EUR, or in the case of an undertaking, up to 4 % of the total worldwide annual turnover of the preceding financial year, whichever is higher` — Article 83(5) — the upper band (snapshot: `snapshots/eu/gdpr.txt`)
+- `It shall apply from 25 May 2018.` — Article 99(2) — the date behind the card's applies field (snapshot: `snapshots/eu/gdpr.txt`)

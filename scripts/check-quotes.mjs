@@ -152,17 +152,24 @@ for (const file of walk(DOCS)) {
 }
 
 // Every snapshot should be cited by at least one card, or it is dead weight that looks like evidence.
+// This walk used to be hard-coded to `snapshots/cn`: the rule existed, but only one
+// jurisdiction could ever trip it, so an EU snapshot could sit in the repository for
+// ever without a single card citing it. It now walks every `snapshots/<jur>/`.
 const cited = new Set();
 for (const [, v] of snapshots) void v;
 for (const file of walk(DOCS)) {
   const raw = readFileSync(file, "utf8");
   for (const m of raw.matchAll(/`(snapshots\/[^`]+)`/g)) cited.add(m[1]);
 }
-if (existsSync(resolve("snapshots/cn"))) {
-  for (const entry of readdirSync(resolve("snapshots/cn"))) {
-    const path = `snapshots/cn/${entry}`;
-    if (!cited.has(path)) {
-      problems.push(`snapshots: ORPHAN — ${path} is in the repository but no card cites it`);
+if (existsSync(resolve("snapshots"))) {
+  for (const jur of readdirSync(resolve("snapshots"))) {
+    const dir = resolve("snapshots", jur);
+    if (!statSync(dir).isDirectory()) continue;
+    for (const entry of readdirSync(dir)) {
+      const path = `snapshots/${jur}/${entry}`;
+      if (!cited.has(path)) {
+        problems.push(`snapshots: ORPHAN — ${path} is in the repository but no card cites it`);
+      }
     }
   }
 }

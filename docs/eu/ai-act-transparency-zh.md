@@ -8,7 +8,8 @@ applies: 2026-08-02
 status: in-force
 source: https://eur-lex.europa.eu/eli/reg/2024/1689/oj https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng
 evidence: A
-verified: 2026-10-06
+retrieved: 2026-10-11
+verified: 2026-10-11
 ---
 
 # 人工智能法案第 50 条：透明度义务
@@ -27,7 +28,7 @@ verified: 2026-10-06
 - 覆盖四类情形：
   1. **与 AI 直接交互**（如聊天机器人）——必须告知用户对象是 AI；
   2. **合成内容**——AI 生成的音频、图像、视频、文本需带**机器可读标记**（machine-readable marking）；
-  3. **深度伪造（deepfake）**——必须披露内容系人工生成或篡改；
+  3. **深度伪造（deep fake）**——必须披露内容系人工生成或篡改；
   4. **情感识别 / 生物特征分类系统**——须向受影响者告知。
 
 ## 时间线
@@ -58,3 +59,11 @@ AI Act 已由 **Regulation (EU) 2026/1744**（Digital Omnibus on AI，即「AI �
 - [x] 核实 2026-12-02 过渡截止的准确表述与适用范围 — 已核实：由 Regulation (EU) 2026/1744 引入，针对 2026-08-02 前已投放市场的系统
 - [x] 补欧委会解释性指南的官方链接与要点摘要 — https://digital-strategy.ec.europa.eu/en/policies/guidelines-ai-transparency-obligations
 - [x] 核实罚则适用档位与百分比 — 第 99 条第 4 款：1500 万欧元或全球年营业额 3%
+
+## 原文引证
+
+- `Providers shall ensure that AI systems intended to interact directly with natural persons are designed and developed in such a way that the natural persons concerned are informed that they are interacting with an AI system` — 第 50(1) 条——与自然人互动须告知 (snapshot: `snapshots/eu/ai-act.txt`)
+- `Providers of AI systems, including general-purpose AI systems, generating synthetic audio, image, video or text content, shall ensure that the outputs of the AI system are marked in a machine-readable format and detectable as artificially generated or manipulated.` — 第 50(2) 条——合成内容须带机器可读标记 (snapshot: `snapshots/eu/ai-act.txt`)
+- `Deployers of an AI system that generates or manipulates image, audio or video content constituting a deep fake, shall disclose that the content has been artificially generated or manipulated.` — 第 50(4) 条——深度伪造须披露；官方英文写作 deep fake（两个词） (snapshot: `snapshots/eu/ai-act.txt`)
+- `shall be subject to administrative fines of up to EUR 15 000 000 or, if the offender is an undertaking, up to 3 % of its total worldwide annual turnover for the preceding financial year, whichever is higher` — 第 99(4) 条——1500 万欧元或 3% 的出处 (snapshot: `snapshots/eu/ai-act.txt`)
+- `Providers of AI systems, including general-purpose AI systems, generating synthetic audio, image, video or text content, that have been placed on the market before 2 August 2026 shall take the necessary steps in order to comply with Article 50(2) by 2 December 2026` — Regulation (EU) 2026/1744——2026-12-02 宽限截止日 (snapshot: `snapshots/eu/ai-act-amendment.txt`)

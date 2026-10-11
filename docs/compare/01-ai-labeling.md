@@ -22,8 +22,8 @@ English · [中文](01-ai-labeling-zh.md)
 | Technical detail | Commission interpretive guidelines (2026-07-20) + voluntary code of practice | **Mandatory national standard GB 45438-2025** (published 2025-02-28, effective 2025-09-01) | A |
 | Starts to apply | 2026-08-02 | 2025-09-01 (measures and standard together) | A |
 | Duty holders | **providers** and **deployers** of AI systems | **generating service providers**, distribution platforms, app stores, users | A |
-| Labelling method | notice + **machine-readable marking** + deepfake disclosure | **explicit** labelling + **implicit** labelling (file metadata) | A |
-| Trigger | ① interaction with AI ② synthetic content ③ deepfakes ④ emotion recognition / biometric categorisation | AI-generated **text, images, audio, video, virtual scenes** | A |
+| Labelling method | notice + **machine-readable marking** + deep fake disclosure | **explicit** labelling + **implicit** labelling (file metadata) | A |
+| Trigger | ① interaction with AI ② synthetic content ③ deep fakes ④ emotion recognition / biometric categorisation | AI-generated **text, images, audio, video, virtual scenes** | A |
 | Beyond content: the interaction itself | Article 50 covers **direct interaction with an AI system** (e.g. chatbots) — users must be informed | Anthropomorphic Interaction Services Measures (Order No. 21, effective 2026-07-15), **Article 18**: the labelling duty applies here too, users must be told they are interacting with an AI service rather than a natural person, on signs of over-dependency the reminder must be prominent and dynamic (e.g. pop-up), and a usage-time reminder is owed **each time continuous use exceeds 2 hours** | A |
 | Enforcer | national market surveillance authorities | CAC, with other departments | A |
 | Penalty | up to EUR 15m or 3% of worldwide turnover (AI Act Article 99(4)) | **no fine of its own.** Generative AI Interim Measures **Article 21** names the Cybersecurity Law, Data Security Law, PIPL and Science and Technology Progress Law, and only where those are silent gives warning, circulated criticism and an order to correct — then suspension of the service on refusal or serious cases. Deep Synthesis Provisions **Article 22** refers outright to the relevant laws and administrative regulations, adds heavier punishment where serious consequences result, and provides no fallback of its own | A |
@@ -42,7 +42,7 @@ English · [中文](01-ai-labeling-zh.md)
 
 ### 2.3 Different centre of gravity
 - China aims at **content form** (text/image/audio/video/virtual scene) and the **distribution chain** (generator → distribution platform → app store → user). — **A**
-- The EU aims at **use situation** (chatbots, emotion recognition, biometric categorisation, deepfakes) — "you must know when you are talking to AI" counts as transparency. — **C**
+- The EU aims at **use situation** (chatbots, emotion recognition, biometric categorisation, deep fakes) — "you must know when you are talking to AI" counts as transparency. — **C**
 
 ### 2.4 China labels the relationship, not only the output
 - Order No. 21 attaches the labelling duty to a **service** and then builds conduct duties around it: no virtual relatives or virtual partners for minors (Article 14), no service goal of replacing social interaction or inducing dependency (Article 10), an exit that must not be blocked by continued interaction (Article 19). — **A**
@@ -52,7 +52,7 @@ English · [中文](01-ai-labeling-zh.md)
 ## 3. What it means for an ordinary person
 
 - In China: an unlabelled AI-generated video can plausibly be found non-compliant, with a mandatory standard behind it. — **B**
-- In the EU: you must be told when you are subject to emotion recognition, or shown that a deepfake is a deepfake. — **A**
+- In the EU: you must be told when you are subject to emotion recognition, or shown that a deep fake is a deep fake. — **A**
 - Common limit: **both can reach platforms at home; neither reaches the same clip hosted abroad.** — **C**
 
 ## 4. Limits and unverified ⚠
