@@ -41,8 +41,8 @@ jobs:
 
       # "Is the sentence this card cites still in the official text?" — asked
       # against the snapshot in snapshots/, so it needs no network and cannot be
-      # defeated by a Chinese host refusing datacenter traffic (28 of the 45 URLs
-      # in docs/ are such hosts, and .lychee.toml excludes them).
+      # defeated by a host that refuses datacenter traffic (30 of the 47 URLs in
+      # docs/ are hosts .lychee.toml excludes).
       - name: Quote anchors against snapshots
         run: node scripts/check-quotes.mjs
 

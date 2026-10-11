@@ -84,12 +84,12 @@ Absence is typed as well. A TODO that records something missing ends with `[gap:
 | Type | Means | Example in this repository |
 |---|---|---|
 | `no_instrument` | the law does not exist yet | China's comprehensive AI law is on the State Council's plan, with no draft |
-| `not_located` | it exists; we have not found the official text | the 2026 consultation draft on minors' online protection |
+| `not_located` | it exists; we have not found the official text | the social-mobilisation security assessment template |
 | `not_transcribable` | published, but not in a form that can be re-checked | GB 45438-2025, served only as tiled page images |
 | `no_official_translation` | no official text in the other language | every CN card's English rendering |
 | `interpretation_missing` | no official Q&A or drafting note to cite | the anthropomorphic-services measures |
 
-The type is the answer to "what would it take to close this?", which a blank or a bare `⚠` does not give. A backlog that cannot distinguish those five is not plannable — 76 open TODOs become one number instead of five different jobs.
+The type is the answer to "what would it take to close this?", which a blank or a bare `⚠` does not give. A backlog that cannot distinguish those five is not plannable — 80 open TODOs become one number instead of five different jobs.
 
 ## Writing rules
 
@@ -137,7 +137,7 @@ lychee --config .lychee.toml --no-progress './**/*.md'   # external links
 
 Two things the checker deliberately lets through: links inside fenced code blocks and inline code spans (they are examples, not links), and a link on a line that says in words that it is *not* an official source (`not an official source`, `非官方来源`) — label it honestly and it may stay.
 
-CI runs from GitHub's runners, which cannot reliably reach sites that only serve mainland China. `.lychee.toml` excludes those hosts; run the link check from a network inside China to cover them. That is why the quote check is offline: 29 of the 46 distinct URLs in `docs/` are hosts CI never reaches, so "is the sentence still there" cannot depend on reaching them.
+CI runs from GitHub's runners, which cannot reliably reach sites that only serve mainland China. `.lychee.toml` excludes those hosts; run the link check from a network inside China to cover them. That is why the quote check is offline: 30 of the 47 distinct URLs in `docs/` are hosts CI never reaches, so "is the sentence still there" cannot depend on reaching them.
 
 The same is true, for a different reason, of EUR-Lex. It sits behind a filter that treats datacenter traffic erratically: from a runner the identical URL alternates between a real `200`, an empty `202`, a `502`, a `503` and a connect timeout, and the answer does not depend on the User-Agent. `.lychee.toml` therefore keeps the request rate low, counts every `5xx` as reachable, and keeps the retry budget generous; on top of that the `External links` job runs the whole check a second time before it reports failure. What survives two passes is a link that is really broken — a `404`, a `410`, or a host that does not resolve — so take a reported error at face value. The one exception: if the error is on `eur-lex.europa.eu` and the URL opens fine in your browser, it was a timeout, and re-running the job is the fix.
 

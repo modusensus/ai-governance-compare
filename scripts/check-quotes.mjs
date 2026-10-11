@@ -10,8 +10,8 @@
  *
  * This is the difference between "the link is still alive" and "the sentence I
  * am quoting is still in the text". A link check says nothing about the second,
- * and 28 of the 45 hosts this repository cites are Chinese government sites that
- * CI deliberately does not probe (they refuse datacenter traffic).
+ * and 30 of the 47 hosts this repository cites are ones CI deliberately does not
+ * probe — mostly Chinese government sites that refuse datacenter traffic.
  *
  * Verdicts per quote:
  *   present        — the string is in the snapshot, character for character
