@@ -113,5 +113,6 @@ In a law card, `evidence` in the front matter grades the card as a whole — A m
 - [x] Provisions on Promoting and Regulating Cross-Border Data Flows (effective 2024-03-22) → `docs/cn/cross-border-data-flow-provisions.md`
 - [x] Measures for Ethical Review of Science and Technology (trial) (effective 2023-12-01) → `docs/cn/ai-law-and-liability.md`
 - [x] AI Law — comprehensive legislation directed by the State Council 2026 plan (no draft yet) → `docs/cn/ai-law-and-liability.md`
+- [x] Regulation on Ensuring Minors' Safe and Healthy Use of the Internet — **consultation draft only**, State Council instrument drafted by the CAC, comments open 2026-09-18 and close 2026-10-17; 25 articles, Article 25 leaves the entry-into-force date blank by design, so the card cites it as a proposal and carries no `effective` date → `docs/cn/minors-safe-network-use-draft.md`
 
 > Before writing a card, secure the official source link first.

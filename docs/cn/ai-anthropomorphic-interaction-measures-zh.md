@@ -80,6 +80,6 @@ verified: 2026-10-11
 
 - [ ] "持续性的情感互动"与普通聊天机器人的边界，办法文本没给判定标准；网信办的答记者问或起草说明尚未找到，官方口径待补 ⚠ [gap:interpretation_missing]
 - [ ] 第二十三条评估申报与第二十六条年度核验的办理渠道、材料清单、时限，是否有配套指引 ⚠
-- [ ] 跟踪未成年人这条线：《未成年人网络保护条例》之外，2026-09-18 国家网信办已就《国务院关于保障未成年人健康安全使用网络的规定（征求意见稿）》公开征求意见 [gap:not_located]
+- [x] 跟踪未成年人这条线：《未成年人网络保护条例》之外，2026-09-18 国家网信办就《国务院关于保障未成年人健康安全使用网络的规定（征求意见稿）》公开征求意见——已建卡：[Regulation on Ensuring Minors' Safe and Healthy Use of the Internet (consultation draft)](minors-safe-network-use-draft.md)（**只有英文版**，本库自译）。该征求意见稿第四条(一)(二)把本办法第十四条只对拟人化互动服务适用的虚拟亲密关系禁令，扩到**所有**向未成年人提供的网络服务，并加上陌生人网络社交服务。⚠《未成年人网络保护条例》本身仍未建卡，见该卡 TODO。
 - [x] 本办法指向的两部已收录：[《生成式人工智能服务管理暂行办法》](generative-ai-services-measures-zh.md)（2023-08-15 施行）、[《互联网信息服务深度合成管理规定》](deep-synthesis-provisions-zh.md)（2023-01-10 施行），均含中英两版
 - [ ] 同名英文卡片 [Interim Measures for the Administration of AI Anthropomorphic Interaction Services](ai-anthropomorphic-interaction-measures.md) 是本库自译，没有官方英文本；两处措辞不一致时，一律以官方中文文本为准

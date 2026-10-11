@@ -28,6 +28,17 @@
  *   node scripts/snapshot.mjs --eu
  *   node scripts/snapshot.mjs --celex 32016R0679 --slug gdpr --what "..."
  *   node scripts/snapshot.mjs --url 'https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679' --slug gdpr --what "..."
+ *   node scripts/snapshot.mjs --url 'https://www.cac.gov.cn/…' --jur cn --slug minors-draft --what "…" --probe '…'
+ *
+ * `--jur` selects the extraction rule and the `snapshots/<jur>/` directory. The
+ * twelve CN snapshots predate this script and were flattened by hand: re-fetching
+ * them through the CN rule reproduces nine byte for byte, while three differ only
+ * where the hand flattening kept an HTML comment's text or a zero-width space that
+ * `flattenHtml` strips — not legal text, and each stored body still hashes to its
+ * own recorded `# sha256(body):`. So a re-fetch is a cross-check on a CN snapshot,
+ * not a proof that the body on disk is the one you would get today. Their headers
+ * record the shorter wording the hand flattening used, which is what those bodies
+ * actually show; snapshots this script writes record the fuller rule above.
  */
 
 import { mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
@@ -150,6 +161,28 @@ function header(source, what, body, extraction) {
 
 const EU_EXTRACTION = "去 <script>/<style>/注释，块级标签换行为界、行内标签删除，html.unescape，去软连字符与零宽字符，NBSP→空格（英文保留词边界：与 CN 的「删全部空白」不同；两侧在 check-quotes 里统一按「去空白」比对）";
 
+const CN_EXTRACTION = "去 <script>/<style>/注释，去全部标签，html.unescape，去软连字符与零宽字符，删除所有空白字符";
+
+/**
+ * The two rules, in the shape the rest of the script needs them. `flatten` maps
+ * raw HTML to the body that gets hashed; `extraction` is the sentence written
+ * into the header, and it is the *whole* rule — a snapshot whose header misdescribes
+ * how its body was made is a snapshot nobody can rebuild, which is why the EU rule
+ * above spells out its four deviations from the CN one instead of saying "like CN
+ * but tag-aware".
+ */
+const JURISDICTIONS = {
+  eu: { flatten: flattenHtml, extraction: EU_EXTRACTION },
+  cn: { flatten: (html) => flattenHtml(html).replace(/[\s\u3000]+/g, ""), extraction: CN_EXTRACTION },
+};
+
+/** The extraction rule for a job's jurisdiction; an unknown `--jur` is a typo, not a default. */
+function jurisdictionFor(jur) {
+  const found = JURISDICTIONS[jur];
+  if (!found) throw new Error(`unknown --jur "${jur}" — known: ${Object.keys(JURISDICTIONS).join(", ")}`);
+  return found;
+}
+
 /**
  * EUR-Lex answers a burst of requests with an occasional ~150-character stub
  * instead of the document — observed twice while building this set: the same URL
@@ -161,7 +194,7 @@ async function oneOnce(job) {
   const res = await fetch(job.source, { headers: { "user-agent": UA, accept: "text/html,*/*" } });
   const html = await res.text();
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${job.source}`);
-  const body = bodyForHash(flattenHtml(html));
+  const body = bodyForHash(job.flatten(html));
   if (body.length < job.minChars) {
     throw new Error(
       `flattened body is ${body.length} chars (html ${html.length}), below the ${job.minChars} floor — stub response or broken extraction; head=${JSON.stringify(body.slice(0, 120))}`
@@ -185,7 +218,7 @@ async function one(job) {
       const { body, found, missing } = await oneOnce(job);
       const file = resolve(join("snapshots", job.jur, `${job.slug}.txt`));
       mkdirSync(dirname(file), { recursive: true });
-      writeFileSync(file, `${header(job.source, job.what, body, EU_EXTRACTION)}${body}\n`, "utf8");
+      writeFileSync(file, `${header(job.source, job.what, body, job.extraction)}${body}\n`, "utf8");
       return { slug: job.slug, chars: norm(body).length, probes: `${found.length}/${(job.probes ?? []).length}`, missing };
     } catch (error) {
       last = error;
@@ -244,9 +277,12 @@ async function main() {
   const jobs = [];
   if (has("--eu")) {
     for (const src of EU_SOURCES) {
+      const { flatten, extraction } = jurisdictionFor("eu");
       jobs.push({
         ...src,
         jur: "eu",
+        flatten,
+        extraction,
         source: `https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:${src.celex}`,
       });
     }
@@ -256,16 +292,24 @@ async function main() {
     const slug = flag("--slug");
     const what = flag("--what");
     if ((!celex && !url) || !slug || !what) {
-      console.error('usage: node scripts/snapshot.mjs --eu | --celex <id> --slug <name> --what "<what>" [--jur eu] [--min-chars N]');
+      console.error('usage: node scripts/snapshot.mjs --eu | --celex <id> | --url <url> --slug <name> --what "<what>" [--jur eu|cn] [--min-chars N] [--probe <string>]...');
       process.exit(2);
     }
+    const jur = flag("--jur") ?? "eu";
+    const { flatten, extraction } = jurisdictionFor(jur);
+    // `--probe` may repeat; the probes are asserted in-process and never printed as
+    // evidence, so a one-off CN pull can name the sentences it expects to find.
+    const probes = [];
+    for (let i = 0; i < argv.length; i += 1) if (argv[i] === "--probe" && argv[i + 1]) probes.push(argv[i + 1]);
     jobs.push({
       source: url ?? `https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:${celex}`,
-      jur: flag("--jur") ?? "eu",
+      jur,
+      flatten,
+      extraction,
       slug,
       what,
       minChars: Number(flag("--min-chars") ?? 10000),
-      probes: [],
+      probes,
     });
   }
 
