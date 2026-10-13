@@ -1,5 +1,6 @@
 <p align="center">
-  <img src="assets/logo.png" alt="AI Governance Compare — EU × China · Laws · Evidence · Trust" width="320">
+  <img src="assets/logo.png#gh-light-mode-only" alt="AI Governance Compare — EU × China · Laws · Evidence · Trust" width="320">
+  <img src="assets/logo-dark.png#gh-dark-mode-only" alt="AI Governance Compare — EU × China · Laws · Evidence · Trust" width="320">
 </p>
 
 <p align="center">
@@ -22,14 +23,14 @@
 
 ## Start here
 
-| Question | Comparison |
-|---|---|
-| How must AI-generated content be labelled? | [01 — Labelling regimes](docs/compare/01-ai-labeling.md) |
-| How may personal data be processed, and how does it cross borders? | [02 — Personal data](docs/compare/02-personal-data.md) |
-| When may data leave the country? | [03 — Cross-border data](docs/compare/03-cross-border-data.md) |
-| What is a platform responsible for? | [04 — Platform responsibility](docs/compare/04-platform-responsibility.md) |
-| Who pays when AI causes harm — and what is still coming? | [05 — Liability and pending law](docs/compare/05-liability-and-pending-law.md) |
-| Who may use, and must protect, the data and systems underneath AI? | [06 — Data and infrastructure](docs/compare/06-data-and-infrastructure.md) |
+| Question                                                           | Comparison                                                                     |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| How must AI-generated content be labelled?                         | [01 — Labelling regimes](docs/compare/01-ai-labeling.md)                       |
+| How may personal data be processed, and how does it cross borders? | [02 — Personal data](docs/compare/02-personal-data.md)                         |
+| When may data leave the country?                                   | [03 — Cross-border data](docs/compare/03-cross-border-data.md)                 |
+| What is a platform responsible for?                                | [04 — Platform responsibility](docs/compare/04-platform-responsibility.md)     |
+| Who pays when AI causes harm — and what is still coming?          | [05 — Liability and pending law](docs/compare/05-liability-and-pending-law.md) |
+| Who may use, and must protect, the data and systems underneath AI? | [06 — Data and infrastructure](docs/compare/06-data-and-infrastructure.md)     |
 
 Want the whole picture first? Read the [overview](docs/compare/00-overview.md).
 
@@ -52,11 +53,11 @@ Want the whole picture first? Read the [overview](docs/compare/00-overview.md).
 
 ## Evidence grades
 
-| Grade | Meaning | Can it support a conclusion? |
-|---|---|---|
-| **A** | Primary official text — statute, regulation, agency rule, official guidance | Yes |
-| **B** | Official interpretation or authoritative secondary source — government white paper, official legal database | Explanatory support only |
-| **C** | Media, commentary, blog posts | Background only |
+| Grade       | Meaning                                                                                                      | Can it support a conclusion? |
+| ----------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------- |
+| **A** | Primary official text — statute, regulation, agency rule, official guidance                                 | Yes                          |
+| **B** | Official interpretation or authoritative secondary source — government white paper, official legal database | Explanatory support only     |
+| **C** | Media, commentary, blog posts                                                                                | Background only              |
 
 Conclusions should rest on grade A. Grade B may explain; grade C may only set context.
 
@@ -78,7 +79,8 @@ docs/
 skills/
 └── ai-governance-compare/   # the same content, loaded as an agent skill
 assets/
-└── logo.png                 # the mark above
+├── logo.png                 # the mark above, transparent ground
+└── logo-dark.png            # the same mark lifted for dark backgrounds
 scripts/
 ├── check-docs.mjs           # the offline checks CI runs
 ├── check-quotes.mjs         # are the quoted sentences still in the official text?
@@ -98,17 +100,17 @@ snapshots/
 
 Other open projects in this space, listed as discovery aids. This is the one section where we describe other people's projects rather than primary sources. What we check is **what each project is and how it records its sources** — we do not audit whether its legal analysis is correct, and we do not restate or vouch for its claims. A row that says how a project sources itself is a structural observation about the repository, not a judgement on its accuracy. For anything that matters, go to the official text (see the `source` field on each card).
 
-| Project | What it is | How it differs from this repository |
-|---|---|---|
-| [awesome-artificial-intelligence-regulation](https://github.com/EthicalML/awesome-artificial-intelligence-regulation) | A curated index of AI guidelines, principles, ethics codes, standards and regulation, grouped by jurisdiction | An index answers "where do I find it". This repository answers "what does the rule say, and how do the two sides differ", with each claim graded against the official text. |
-| [awesome-ai-governance](https://github.com/agentrust-io/awesome-ai-governance) | A curated index of some 180 tools, specifications and resources for governing AI agents, with links re-checked by CI (CC0) | Agent-runtime tooling rather than legal sources — the few AI Act entries point at products that reference the Act, not at the Act itself. |
-| [university-ai-policy-tracker](https://github.com/SciWhite/university-ai-policy-tracker) | Tracks university AI policies worldwide; each claim carries a source URL, a verbatim quote and a content hash, and is re-checked against the live page on a schedule (Apache-2.0) | Closest to our *method*. Different subject — institutional policy, not national law — and its evidence tiers describe the retrieval channel (page, PDF, archive) rather than the legal weight of a source. |
-| [ai-policy-tracker](https://github.com/hayleyamay/ai-policy-tracker) | A scheduled tracker that pulls UK policy papers, US Congress bills and EU AI Act implementation documents daily and adds a model-written plain-English summary to each record (MIT) | Closest to our *scope*, but it follows legislative status over time rather than comparing provisions. Summaries are generated from each record's title and description, and the EU leg reads a third-party tracker rather than EUR-Lex. |
-| [Privacy-Data-Protection-Skills](https://github.com/mukul975/Privacy-Data-Protection-Skills) | 282 privacy and data-protection references packaged as agent skills, spanning GDPR, CCPA, the EU AI Act, HIPAA, LGPD, PIPL and India's DPDP Act (Apache-2.0) | Overlaps our subject matter, and is built to be loaded by an agent rather than read against a statute. Skills name articles but carry no links to primary text, so their claims cannot be re-verified. |
-| [verifywise](https://github.com/verifywise-ai/verifywise) | A self-hosted governance platform shipping the EU AI Act, ISO 42001, NIST AI RMF and some twenty other frameworks as built-in control checklists (TypeScript and Python) | It runs a compliance programme — an organisation works through its lists. We describe what the statute requires and cite it. Note the licence: Business Source License 1.1 is free for internal use only and is not an open-source licence; check it before reusing anything. |
-| [EuConform](https://github.com/Hiepler/EuConform) | An EU AI Act risk-classification and bias-testing tool that returns article references alongside each result (TypeScript; MIT) | One jurisdiction, and it classifies the system you describe rather than comparing what two legal orders require of it. |
-| [attestix](https://github.com/VibeTensor/attestix) | Identity and attestation infrastructure for AI agents — decentralised identifiers, verifiable credentials, delegation chains, and a compliance layer that records an organisation's own risk assertions (Python; Apache-2.0) | Its records are cryptographically signed rather than cited: a signature tells you a claim has an author, not that it matches the statute. |
-| [finOS AI Governance Framework](https://github.com/finos/ai-governance-framework) | A financial-services community specification: risk and mitigation cards plus a crosswalk of roughly a thousand references into EU AI Act, NIST, FFIEC, FCA and OSFI material (CC BY 4.0) | An industry practice map — how institutions turn obligations into controls. Cards carry a document status but no per-claim source grade or verification date, so read it as background, not as law. |
+| Project                                                                                                              | What it is                                                                                                                                                                                                                    | How it differs from this repository                                                                                                                                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [awesome-artificial-intelligence-regulation](https://github.com/EthicalML/awesome-artificial-intelligence-regulation) | A curated index of AI guidelines, principles, ethics codes, standards and regulation, grouped by jurisdiction                                                                                                                 | An index answers "where do I find it". This repository answers "what does the rule say, and how do the two sides differ", with each claim graded against the official text.                                                                                                    |
+| [awesome-ai-governance](https://github.com/agentrust-io/awesome-ai-governance)                                        | A curated index of some 180 tools, specifications and resources for governing AI agents, with links re-checked by CI (CC0)                                                                                                    | Agent-runtime tooling rather than legal sources — the few AI Act entries point at products that reference the Act, not at the Act itself.                                                                                                                                     |
+| [university-ai-policy-tracker](https://github.com/SciWhite/university-ai-policy-tracker)                              | Tracks university AI policies worldwide; each claim carries a source URL, a verbatim quote and a content hash, and is re-checked against the live page on a schedule (Apache-2.0)                                             | Closest to our*method*. Different subject — institutional policy, not national law — and its evidence tiers describe the retrieval channel (page, PDF, archive) rather than the legal weight of a source.                                                                  |
+| [ai-policy-tracker](https://github.com/hayleyamay/ai-policy-tracker)                                                  | A scheduled tracker that pulls UK policy papers, US Congress bills and EU AI Act implementation documents daily and adds a model-written plain-English summary to each record (MIT)                                           | Closest to our*scope*, but it follows legislative status over time rather than comparing provisions. Summaries are generated from each record's title and description, and the EU leg reads a third-party tracker rather than EUR-Lex.                                       |
+| [Privacy-Data-Protection-Skills](https://github.com/mukul975/Privacy-Data-Protection-Skills)                          | 282 privacy and data-protection references packaged as agent skills, spanning GDPR, CCPA, the EU AI Act, HIPAA, LGPD, PIPL and India's DPDP Act (Apache-2.0)                                                                  | Overlaps our subject matter, and is built to be loaded by an agent rather than read against a statute. Skills name articles but carry no links to primary text, so their claims cannot be re-verified.                                                                         |
+| [verifywise](https://github.com/verifywise-ai/verifywise)                                                             | A self-hosted governance platform shipping the EU AI Act, ISO 42001, NIST AI RMF and some twenty other frameworks as built-in control checklists (TypeScript and Python)                                                      | It runs a compliance programme — an organisation works through its lists. We describe what the statute requires and cite it. Note the licence: Business Source License 1.1 is free for internal use only and is not an open-source licence; check it before reusing anything. |
+| [EuConform](https://github.com/Hiepler/EuConform)                                                                     | An EU AI Act risk-classification and bias-testing tool that returns article references alongside each result (TypeScript; MIT)                                                                                                | One jurisdiction, and it classifies the system you describe rather than comparing what two legal orders require of it.                                                                                                                                                         |
+| [attestix](https://github.com/VibeTensor/attestix)                                                                    | Identity and attestation infrastructure for AI agents — decentralised identifiers, verifiable credentials, delegation chains, and a compliance layer that records an organisation's own risk assertions (Python; Apache-2.0) | Its records are cryptographically signed rather than cited: a signature tells you a claim has an author, not that it matches the statute.                                                                                                                                      |
+| [finOS AI Governance Framework](https://github.com/finos/ai-governance-framework)                                     | A financial-services community specification: risk and mitigation cards plus a crosswalk of roughly a thousand references into EU AI Act, NIST, FFIEC, FCA and OSFI material (CC BY 4.0)                                      | An industry practice map — how institutions turn obligations into controls. Cards carry a document status but no per-claim source grade or verification date, so read it as background, not as law.                                                                           |
 
 Maintain a project that belongs here? Open an issue — we add entries only after checking what the project actually is.
 

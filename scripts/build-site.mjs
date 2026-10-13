@@ -397,7 +397,8 @@ function landingPage() {
 
   const body = `
 <section class="hero">
-  <img src="assets/logo.png" alt="AI Governance Compare — EU × China · Laws · Evidence · Trust" width="420" height="315">
+  <img class="mark-light" src="assets/logo.png" alt="AI Governance Compare — EU × China · Laws · Evidence · Trust" width="420" height="315">
+  <img class="mark-dark" src="assets/logo-dark.png" alt="" width="420" height="315">
   <blockquote class="principle"><p>
     <strong>Nothing enters this repository without a source.</strong><br>
     <span lang="zh-Hans">任何主张，没有一手来源就不进这个仓库。</span>
@@ -528,6 +529,7 @@ write("", landingPage());
 
 mkdirSync(join(OUT, "assets"), { recursive: true });
 copyFileSync(join(ROOT, "assets", "logo.png"), join(OUT, "assets", "logo.png"));
+copyFileSync(join(ROOT, "assets", "logo-dark.png"), join(OUT, "assets", "logo-dark.png"));
 copyFileSync(join(ROOT, "scripts", "site", "style.css"), join(OUT, "style.css"));
 writeFileSync(join(OUT, ".nojekyll"), "");
 

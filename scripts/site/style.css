@@ -17,9 +17,15 @@
   The palette is tokenised because three palettes share one sheet: light, dark
   (system preference or the masthead toggle), and print (always light, because
   browsers drop background fills and light text would vanish on paper).
+
+  A refinement pass keeps the same direction and polishes the states a reader
+  actually moves through: hover, focus, selection and row highlighting wear the
+  accent or a tokenised grey; transitions are short; text-wrap and tabular
+  figures tighten the rhythm; reduced-motion preferences are respected.
 */
 
 :root {
+  color-scheme: light;
   --paper: #ffffff;
   --paper-deep: #f2f2f2;
   --ink: #000000;
@@ -38,7 +44,7 @@
   --grade-c-bg: #e30613;
   --grade-c-fg: #ffffff;
   --zebra: #fafafa;
-  --plate-edge: #000000;
+  --row-hover: #ebebeb;   /* the one step brighter than zebra, never a tint */
 
   /* One page width, shared by the masthead, the text and the footer, so the
      rule under the header lands on the edge of the column it introduces. */
@@ -79,7 +85,8 @@
     --grade-c-bg: #ff4438;
     --grade-c-fg: #0f0f0f;  /* white on #FF4438 is 2.9:1; black on it is 7:1 */
     --zebra: #161616;
-    --plate-edge: rgba(255, 255, 255, 0.35);
+    --row-hover: #242424;
+    color-scheme: dark;
   }
 }
 
@@ -102,7 +109,8 @@
   --grade-c-bg: #ff4438;
   --grade-c-fg: #0f0f0f;
   --zebra: #161616;
-  --plate-edge: rgba(255, 255, 255, 0.35);
+  --row-hover: #242424;
+  color-scheme: dark;
 }
 
 *,
@@ -113,6 +121,19 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+/* The two states a reader reaches without a mouse — keyboard focus and text
+   selection — should wear the accent, not the browser default. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--paper);
 }
 
 body {
@@ -146,6 +167,10 @@ body {
   text-decoration: none;
   border-bottom: 0;
   white-space: nowrap;
+}
+
+.wordmark:hover {
+  color: var(--accent);
 }
 
 .masthead nav {
@@ -244,6 +269,13 @@ dl {
   margin: 0 0 1.05em;
 }
 
+/* A paragraph should not end on a single orphan word; the browser trims the
+   ragged edge when it can do so without stretching spaces. */
+p,
+li {
+  text-wrap: pretty;
+}
+
 ul,
 ol {
   padding-left: 1.4rem;
@@ -262,6 +294,13 @@ a {
 a:hover {
   color: var(--accent);
   border-bottom-color: var(--accent);
+}
+
+/* Colour changes arrive over a breath instead of snapping — long enough to
+   register, short enough to feel instant. */
+a,
+.theme-toggle {
+  transition: color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
 }
 
 code {
@@ -405,6 +444,7 @@ table {
   border-collapse: collapse;
   width: 100%;
   font-size: 0.93rem;
+  font-variant-numeric: tabular-nums; /* dates and figures align by column */
 }
 
 th,
@@ -440,6 +480,10 @@ td:first-child {
 
 tbody tr:nth-child(odd) td {
   background: var(--zebra);
+}
+
+tbody tr:hover td {
+  background: var(--row-hover);
 }
 
 tbody tr:last-child td {
@@ -487,14 +531,37 @@ td code {
   margin-bottom: 2.6rem;
 }
 
-/* The mark is a flattened cream rectangle; framed on both themes so it reads as
-   a mounted plate rather than an image that leaked. */
+/* The mark carries no background of its own, so it sits directly on the page —
+   no frame, no plate. It comes in two keys: the original colours read on the
+   light sheet, the lifted ones on the dark. The both-ways selector matches the
+   theme tokens: system preference unless the masthead toggle says otherwise. */
 .hero img {
   max-width: 100%;
   height: auto;
   margin: 0 auto 1.4rem;
   display: block;
-  border: 1px solid var(--plate-edge);
+}
+
+.hero .mark-dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .hero .mark-light {
+    display: none;
+  }
+
+  :root:not([data-theme="light"]) .hero .mark-dark {
+    display: block;
+  }
+}
+
+:root[data-theme="dark"] .hero .mark-light {
+  display: none;
+}
+
+:root[data-theme="dark"] .hero .mark-dark {
+  display: block;
 }
 
 .hero .principle {
@@ -679,6 +746,10 @@ body.home {
   border-color: var(--accent);
 }
 
+.theme-toggle:active {
+  transform: translateY(1px);
+}
+
 .theme-toggle .t-when-dark {
   display: none;
 }
@@ -811,7 +882,6 @@ body.home {
     --grade-c-bg: transparent;
     --grade-c-fg: #000;
     --zebra: transparent;
-    --plate-edge: transparent;
   }
 
   .m-grade {
@@ -845,5 +915,22 @@ body.home {
   tr,
   blockquote {
     break-inside: avoid;
+  }
+}
+
+/* ------------------------------------------------------------- reduced motion */
+
+/* Smooth scroll and the short transitions above are conveniences, not
+   content. Readers who ask the system to reduce motion get none of them. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
 }
