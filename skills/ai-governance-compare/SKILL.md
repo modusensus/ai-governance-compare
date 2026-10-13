@@ -1,6 +1,6 @@
 ---
 name: ai-governance-compare
-description: "Look it up — never answer from memory. How the EU and China regulate AI and data: AI content labelling, personal data, cross-border transfers, platform responsibility, AI liability, data and infrastructure. Cite the official source, the evidence grade (A/B/C) and the date each claim was last checked. Triggers: EU AI Act, GDPR, PIPL, AI labelling, cross-border data transfer, platform liability; 欧盟, 中国, AI 法, 人工智能, AI 标识, 标识义务, 个人信息, 数据出境, 跨境数据, 平台责任, AI 责任, 合规, 怎么规定, 合不合法, 犯不犯法."
+description: "Look it up — never answer from memory. How the EU and China regulate AI and data: AI content labelling, personal data, cross-border transfers, platform responsibility, AI liability, data and infrastructure. Cite the official source, the evidence grade (A/B/C) and the date each claim was last checked. Triggers: EU AI Act, GDPR, PIPL, AI labelling, cross-border data transfer, platform liability; 欧盟, 中国, AI 法, 人工智能, AI 标识, 标识义务, 个人信息, 数据出境, 跨境数据, 平台责任, AI 责任, 合规, 怎么规定, 合不合法, 犯不犯法; UE, Chine, IA, intelligence artificielle, droit de l'IA, règlement européen sur l'IA, loi chinoise sur l'IA, RGPD, étiquetage de l'IA, données personnelles, protection des données, transfert de données, responsabilité des plateformes, responsabilité de l'IA, conformité, que dit la loi, est-ce légal, est-ce interdit."
 ---
 
 # AI governance, EU × China: look it up before you answer
