@@ -27,6 +27,8 @@ All notable changes to this project are documented here. The format follows [Kee
 
 - The "RMB 10 million" claim in `docs/cn/generative-ai-services-measures.md`, its Chinese version and `docs/cn/ai-law-and-liability.md` is no longer attributed to a "**Articles 61–69**" span, which swept in the seven articles between them that set no such ceiling. It now names the two articles that do and links to the section that transcribes them; the Chinese card's note that the Cybersecurity Law card's penalty section was still missing is removed and that TODO ticked.
 
+- The skill's `description` now carries French trigger words beside the English and Chinese ones. That field is the only text an agent sees when it decides whether to load the skill, and it held no French — a question like "le règlement européen sur l'IA impose quoi pour l'étiquetage ?" had nothing to match against, however well the cards would have answered it. No card is translated: an agent reading the English cards replies in the language it was asked in, so what was missing was the way in, not the content.
+
 ### Fixed
 - The front-matter example in `CONTRIBUTING.md` used `published: 2025-03-14` for the labelling measures — the web-posting date this repository itself corrected in #8 — so the binding document demonstrated the wrong field semantics. It now reads `2025-03-07`, the date on the instrument.
 
