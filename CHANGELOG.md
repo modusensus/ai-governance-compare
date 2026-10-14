@@ -4,6 +4,8 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+## [0.11.0] - 2026-10-13
+
 ### Added
 - **`stage`: where in the pipeline.** `status: draft` covered two incompatible things — a law the legislature has directed but which has no text, and a consultation draft that does have one — and only the second can be read. A card whose `status` is `draft`, `proposed` or `stub` must now carry `stage: plan | public-comment | adopted-not-in-force | in-force`; `plan` and `public-comment` are refused an `effective` date, `adopted-not-in-force` requires one, and `in-force` is the only stage allowed beside `status: in-force`. All four rules negative-tested with three throwaway cards, each of which fails as intended. `docs/cn/ai-law-and-liability.md` is the first card to declare itself `plan` — the comprehensive AI law exists only as an item in the State Council’s 2026 legislative plan, which is precisely the distinction the field exists to keep.
 
