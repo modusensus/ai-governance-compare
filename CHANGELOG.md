@@ -4,6 +4,9 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+### Added
+- `docs/compare/07-ai-output-ownership.md` and its Chinese version — **Who owns what an AI generates?** The first comparison in this repository on the ownership question, and its answer is that neither instrument allocates the right. The AI Act's only operative copyright clause is **Article 53(1)(c)**, a policy duty on the **training** side, and its output-side duty is **Article 50(2)**, a marking duty; China's Generative AI Measures bind training data (**Article 7(2)**, a non-infringement rule) and provider conduct (**Article 4(3)**), and reach the output only through **Article 12** into the Labelling Measures. The load-bearing sentence is Recital 108 — `This Regulation does not affect the enforcement of copyright rules as provided for under Union law.` — and the negative reading it supports is recorded at **B**: across the AI Act snapshot `copyright` occurs on **8 lines** (Recitals 104–108, Article 53(1)(c), and the citation list naming Directive (EU) 2019/790) and **0 times** in the amending Regulation (EU) 2026/1744, while no operative provision assigns a right in an output or names its author. The comparison states plainly what it does not cover — the PRC Copyright Law, Directive (EU) 2019/790, and the case law on both sides, none of which is carded here — and leaves four typed TODOs to close it. **14 anchors per language**, all present. `docs/compare/00-overview.md` gains the ownership line in §4.2 and the limits note in §7, in both languages.
+
 ## [0.11.0] - 2026-10-13
 
 ### Added

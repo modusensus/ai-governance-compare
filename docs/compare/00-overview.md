@@ -75,6 +75,7 @@ Think of it this way: the EU draws a city master plan and then builds to it; Chi
 ### 4.2 Generative AI — **A**
 - EU: inside the AI Act's GPAI chapter — model cards, training-data summaries, copyright policy, adversarial testing for systemic risk.
 - China: a dedicated interim measure plus the labelling measures — filing, content safety, labelling.
+- Neither says **who owns** what is generated: the EU's copyright clause is a training-side policy duty (Article 53(1)(c)) and its output-side duty is marking (Article 50(2)); China's measures bind training data and labelling. See [07 — AI output ownership](07-ai-output-ownership.md). — **B**
 
 ### 4.3 Cross-border data (where firms get stuck) — **A**
 - EU: check for an adequacy decision first; otherwise SCCs or BCRs.
@@ -123,6 +124,7 @@ Product-level mechanisms that put authorisation, revocation, identity and audit 
 - The AI Law's progress needs checking against the latest legislative plan. The Cybersecurity Law amendment is confirmed (adopted 2025-10-28, in force 2026-01-01). — **B**
 - Penalty caps (GDPR 4%, AI Act 7%) are statutory maxima; actual fines are far lower. — **A**
 - The ePrivacy Directive (2002/58/EC) is listed as a track but has no card yet, so it is not compared anywhere in this repository. — **A**
+- The copyright statutes that would decide ownership of AI-generated content — Directive (EU) 2019/790 and the PRC Copyright Law — have no card here, so nothing in this repository names an owner for generated content. — **C**
 
 ## 8. Official sources
 
