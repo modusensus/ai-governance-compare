@@ -17,7 +17,7 @@
 
 **A source-traceable comparison of how the EU and China regulate AI and data.** Each comparison answers one question — how must AI-generated content be labelled, how may personal data cross a border, who is liable when AI causes harm — and every key claim carries an evidence grade and the date it was last checked.
 
-**中文**：欧盟与中国如何监管 AI 与数据的**可溯源对照** —— 一份对比回答一个法律问题，每条关键主张都标注**证据等级**与**最后核查日期**。中文入口：[总览](docs/compare/00-overview-zh.md) · [AI 标识](docs/compare/01-ai-labeling-zh.md) · [数据出境](docs/compare/03-cross-border-data-zh.md)。
+**中文**：欧盟与中国如何监管 AI 与数据的**可溯源对照** —— 一份对比回答一个法律问题，每条关键主张都标注**证据等级**与**最后核查日期**。中文入口：[总览](docs/compare/00-overview-zh.md) · [AI 标识](docs/compare/01-ai-labeling-zh.md) · [数据出境](docs/compare/03-cross-border-data-zh.md) · [AI 生成内容的权利归属](docs/compare/07-ai-output-ownership-zh.md)。
 
 > **Principle: nothing enters this repository without a source.**
 
@@ -31,6 +31,7 @@
 | What is a platform responsible for?                                | [04 — Platform responsibility](docs/compare/04-platform-responsibility.md)     |
 | Who pays when AI causes harm — and what is still coming?          | [05 — Liability and pending law](docs/compare/05-liability-and-pending-law.md) |
 | Who may use, and must protect, the data and systems underneath AI? | [06 — Data and infrastructure](docs/compare/06-data-and-infrastructure.md)     |
+| Who owns what an AI generates?                                     | [07 — AI output ownership](docs/compare/07-ai-output-ownership.md)             |
 
 Want the whole picture first? Read the [overview](docs/compare/00-overview.md).
 
@@ -75,7 +76,8 @@ docs/
     ├── 03-cross-border-data.md
     ├── 04-platform-responsibility.md
     ├── 05-liability-and-pending-law.md
-    └── 06-data-and-infrastructure.md
+    ├── 06-data-and-infrastructure.md
+    └── 07-ai-output-ownership.md
 skills/
 └── ai-governance-compare/   # the same content, loaded as an agent skill
 assets/
